@@ -2,7 +2,7 @@ import type { ComponentStory, Meta } from "@storybook/react"
 import { Colors } from "./ColorSetList"
 
 const meta: Meta<typeof Colors> = {
-  title: "Foundation",
+  title: "Foundation/Colors",
   component: Colors,
 }
 
@@ -13,4 +13,4 @@ const ColorsTemplate: Story = () => {
   return <Colors />
 }
 
-export const COLORS = ColorsTemplate.bind({})
+export const ColorSet = ColorsTemplate.bind({})
