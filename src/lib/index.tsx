@@ -1,1 +1,3 @@
-export { default as TextComponent } from "./components/TextComponent"
+import "./styles/index.scss"
+
+export { TextComponent } from "./components/TextComponent"
