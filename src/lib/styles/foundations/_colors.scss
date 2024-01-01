@@ -1,7 +1,17 @@
 .ui-colors {
-  &-list {
-    margin: 0;
-    padding: 0;
+  &-set {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
   }
 
   &-item {
@@ -11,7 +21,6 @@
     width: 240px;
     height: 48px;
     padding: 0 12px;
-    list-style-type: none;
 
     &.light:nth-child(n + 6) {
       color: #fff;
