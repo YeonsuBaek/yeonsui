@@ -1,0 +1,118 @@
+@import "../constants/themes";
+
+@mixin hexRGB($name, $hex) {
+  --#{$name}: #{$hex};
+}
+
+//light
+html:root {
+  .theme-light {
+    @each $name, $color in $light-colors {
+      @include hexRGB($name, $color);
+    }
+
+    &.red {
+      --Primary-Color-1: var(--Red1);
+      --Primary-Color-2: var(--Red2);
+      --Primary-Color-3: var(--Red3);
+      --Primary-Color-4: var(--Red4);
+      --Primary-Color-5: var(--Red5);
+      --Primary-Color-6: var(--Red6);
+      --Primary-Color-7: var(--Red7);
+      --Primary-Color-8: var(--Red8);
+      --Primary-Color-9: var(--Red9);
+      --Primary-Color-10: var(--Red10);
+    }
+
+    &.volcano {
+      --Primary-Color-1: var(--Volcano1);
+      --Primary-Color-2: var(--Volcano2);
+      --Primary-Color-3: var(--Volcano3);
+      --Primary-Color-4: var(--Volcano4);
+      --Primary-Color-5: var(--Volcano5);
+      --Primary-Color-6: var(--Volcano6);
+      --Primary-Color-7: var(--Volcano7);
+      --Primary-Color-8: var(--Volcano8);
+      --Primary-Color-9: var(--Volcano9);
+      --Primary-Color-10: var(--Volcano10);
+    }
+
+    &.sunset {
+      --Primary-Color-1: var(--Sunset1);
+      --Primary-Color-2: var(--Sunset2);
+      --Primary-Color-3: var(--Sunset3);
+      --Primary-Color-4: var(--Sunset4);
+      --Primary-Color-5: var(--Sunset5);
+      --Primary-Color-6: var(--Sunset6);
+      --Primary-Color-7: var(--Sunset7);
+      --Primary-Color-8: var(--Sunset8);
+      --Primary-Color-9: var(--Sunset9);
+      --Primary-Color-10: var(--Sunset10);
+    }
+
+    &.polar {
+      --Primary-Color-1: var(--Polar1);
+      --Primary-Color-2: var(--Polar2);
+      --Primary-Color-3: var(--Polar3);
+      --Primary-Color-4: var(--Polar4);
+      --Primary-Color-5: var(--Polar5);
+      --Primary-Color-6: var(--Polar6);
+      --Primary-Color-7: var(--Polar7);
+      --Primary-Color-8: var(--Polar8);
+      --Primary-Color-9: var(--Polar9);
+      --Primary-Color-10: var(--Polar10);
+    }
+
+    &.cyan {
+      --Primary-Color-1: var(--Cyan1);
+      --Primary-Color-2: var(--Cyan2);
+      --Primary-Color-3: var(--Cyan3);
+      --Primary-Color-4: var(--Cyan4);
+      --Primary-Color-5: var(--Cyan5);
+      --Primary-Color-6: var(--Cyan6);
+      --Primary-Color-7: var(--Cyan7);
+      --Primary-Color-8: var(--Cyan8);
+      --Primary-Color-9: var(--Cyan9);
+      --Primary-Color-10: var(--Cyan10);
+    }
+
+    &.daybreak {
+      --Primary-Color-1: var(--Daybreak1);
+      --Primary-Color-2: var(--Daybreak2);
+      --Primary-Color-3: var(--Daybreak3);
+      --Primary-Color-4: var(--Daybreak4);
+      --Primary-Color-5: var(--Daybreak5);
+      --Primary-Color-6: var(--Daybreak6);
+      --Primary-Color-7: var(--Daybreak7);
+      --Primary-Color-8: var(--Daybreak8);
+      --Primary-Color-9: var(--Daybreak9);
+      --Primary-Color-10: var(--Daybreak10);
+    }
+
+    &.purple {
+      --Primary-Color-1: var(--Purple1);
+      --Primary-Color-2: var(--Purple2);
+      --Primary-Color-3: var(--Purple3);
+      --Primary-Color-4: var(--Purple4);
+      --Primary-Color-5: var(--Purple5);
+      --Primary-Color-6: var(--Purple6);
+      --Primary-Color-7: var(--Purple7);
+      --Primary-Color-8: var(--Purple8);
+      --Primary-Color-9: var(--Purple9);
+      --Primary-Color-10: var(--Purple10);
+    }
+
+    &.magenta {
+      --Primary-Color-1: var(--Magenta1);
+      --Primary-Color-2: var(--Magenta2);
+      --Primary-Color-3: var(--Magenta3);
+      --Primary-Color-4: var(--Magenta4);
+      --Primary-Color-5: var(--Magenta5);
+      --Primary-Color-6: var(--Magenta6);
+      --Primary-Color-7: var(--Magenta7);
+      --Primary-Color-8: var(--Magenta8);
+      --Primary-Color-9: var(--Magenta9);
+      --Primary-Color-10: var(--Magenta10);
+    }
+  }
+}
