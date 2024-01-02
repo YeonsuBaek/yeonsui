@@ -1,15 +1,17 @@
-@import "../constants/themes";
-
-@mixin hexRGB($name, $hex) {
-  --#{$name}: #{$hex};
-}
-
 //light
 html:root {
   .theme-light {
     @each $name, $color in $light-colors {
       @include hexRGB($name, $color);
     }
+
+    --Font-Color-Title: rgba(var(--Gray13RGB), 0.85);
+    --Font-Color-Primary: rgba(var(--Gray13RGB), 0.65);
+    --Font-Color-Secondary: rgba(var(--Gray13RGB), 0.45);
+    --Font-Color-Disabled: rgba(var(--Gray13RGB), 0.25);
+    --Font-Color-Border: rgba(var(--Gray13RGB), 0.15);
+    --Font-Color-Divider: rgba(var(--Gray13RGB), 0.06);
+    --Font-Color-Background: rgba(var(--Gray13RGB), 0.04);
 
     &.red {
       --Primary-Color-1: var(--Red1);
