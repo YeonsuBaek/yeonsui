@@ -1,3 +1,4 @@
-div {
-  color: red;
-}
+@import "./constants/colors";
+@import "./constants/themes";
+@import "./base/themes";
+@import "./foundations/colors";
