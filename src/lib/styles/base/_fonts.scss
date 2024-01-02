@@ -1,0 +1,20 @@
+$font-family: "Pretendard Variable", Pretendard, -apple-system,
+  BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+  "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+html:root {
+  --Font-Weight-Regular: 400;
+  --Font-Weight-Medium: 500;
+  --Font-Weight-Bold: 700;
+
+  --Font-Header-1: var(--Font-Weight-Medium) 38px/46px "#{$font-family}";
+  --Font-Header-2: var(--Font-Weight-Medium) 30px/38px "#{$font-family}";
+  --Font-Header-3: var(--Font-Weight-Medium) 24px/32px "#{$font-family}";
+  --Font-Header-4: var(--Font-Weight-Medium) 20px/28px "#{$font-family}";
+  --Font-Header-5: var(--Font-Weight-Medium) 16px/24px "#{$font-family}";
+
+  --Font-Body-Regular: var(--Font-Weight-Regular) 14px/22px "#{$font-family}";
+  --Font-Body-Medium: var(--Font-Weight-Medium) 14px/22px "#{$font-family}";
+  --Font-Body-Bold: var(--Font-Weight-Bold) 14px/22px "#{$font-family}";
+}
