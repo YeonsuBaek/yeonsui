@@ -1,9 +1,3 @@
-@import "../constants/themes";
-
-@mixin hexRGB($name, $hex) {
-  --#{$name}: #{$hex};
-}
-
 //light
 html:root {
   .theme-light {
