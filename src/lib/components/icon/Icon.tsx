@@ -16,6 +16,7 @@ const Icon = ({ icon, size, color }: IconProps) => {
   const contents = svgdata.paths.map((path: SvgPathType) => {
     return (
       <path
+        key={path.d}
         d={path.d}
         fill={color ? color : path.fill}
         fillOpacity={path.fillOpacity}
