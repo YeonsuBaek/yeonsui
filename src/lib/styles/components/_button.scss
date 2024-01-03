@@ -1,0 +1,84 @@
+.ui-button {
+  padding: 4px 15px;
+  border: 1px solid;
+  border-radius: 2px;
+  outline: 0;
+  font: var(--Font-Body-Regular);
+  cursor: pointer;
+
+  &.primary {
+    color: var(--Gray1);
+    background-color: var(--Primary-Color-6);
+    border-color: var(--Primary-Color-6);
+
+    &:hover {
+      background-color: var(--Primary-Color-5);
+      border-color: var(--Primary-Color-5);
+    }
+    &:active {
+      background-color: var(--Primary-Color-7);
+      border-color: var(--Primary-Color-7);
+    }
+  }
+
+  &.secondary {
+    color: var(--Font-Color-Title);
+    background-color: var(--Gray1);
+    border-color: var(--Gray5);
+
+    &:hover {
+      color: var(--Primary-Color-5);
+      border-color: var(--Primary-Color-5);
+    }
+    &:active {
+      color: var(--Primary-Color-7);
+      border-color: var(--Primary-Color-7);
+    }
+  }
+
+  &.link {
+    color: var(--Primary-Color-6);
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover {
+      color: var(--Primary-Color-6);
+    }
+    &:active {
+      color: var(--Primary-Color-7);
+    }
+
+    &:disabled,
+    &:disabled:is(:hover, :active) {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  &.text {
+    color: var(--Font-Color-Title);
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover {
+      background-color: var(--Gray2);
+    }
+    &:active {
+      background-color: var(--Gray3);
+    }
+
+    &:disabled,
+    &:disabled:is(:hover, :active) {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  &:disabled,
+  &:disabled:is(:hover, :active) {
+    color: var(--Font-Color-Disabled);
+    background-color: var(--Gray3);
+    border-color: var(--Gray5);
+    cursor: default;
+  }
+}
