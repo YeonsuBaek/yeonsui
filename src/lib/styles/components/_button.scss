@@ -1,10 +1,22 @@
 .ui-button {
-  padding: 4px 15px;
   border: 1px solid;
   border-radius: 2px;
   outline: 0;
   font: var(--Font-Body-Regular);
   cursor: pointer;
+
+  &.small {
+    padding: 0 7px;
+  }
+
+  &.medium {
+    padding: 4px 15px;
+  }
+
+  &.large {
+    font-size: 16px;
+    padding: 6px 15px;
+  }
 
   &.primary {
     color: var(--Gray1);
