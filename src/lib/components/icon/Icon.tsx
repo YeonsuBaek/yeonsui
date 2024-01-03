@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { IconProps, SvgPathType } from "."
 import { icons } from "./Icons"
 
-const Icon = ({ icon, size }: IconProps) => {
+const Icon = ({ icon, size, color }: IconProps) => {
   const {
     width: defWidth,
     height: defHeight,
@@ -14,7 +14,13 @@ const Icon = ({ icon, size }: IconProps) => {
   const [height, setHeight] = useState<string>(defHeight)
 
   const contents = svgdata.paths.map((path: SvgPathType) => {
-    return <path d={path.d} fill={path.fill} fillOpacity={path.fillOpacity} />
+    return (
+      <path
+        d={path.d}
+        fill={color ? color : path.fill}
+        fillOpacity={path.fillOpacity}
+      />
+    )
   })
 
   useEffect(() => {
