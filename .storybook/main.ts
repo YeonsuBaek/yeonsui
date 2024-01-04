@@ -1,4 +1,4 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
+import type { StorybookConfig } from "@storybook/react-webpack5"
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -8,6 +8,15 @@ const config: StorybookConfig = {
     "@storybook/preset-create-react-app",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    "storybook-addon-sass-postcss",
+    {
+      name: "storybook-addon-sass-postcss",
+      options: {
+        rule: {
+          test: /\.(scss|sass)$/i,
+        },
+      },
+    },
   ],
   framework: {
     name: "@storybook/react-webpack5",
@@ -21,5 +30,5 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   staticDirs: ["../public"],
-};
-export default config;
+}
+export default config
