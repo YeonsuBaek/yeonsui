@@ -6,12 +6,14 @@ const Button = ({
   variant = "primary",
   size = "medium",
   disabled = false,
+  onClick,
 }: ButtonProps) => {
   return (
     <button
       type='button'
       className={`ui-button ${variant} ${size}`}
       disabled={disabled}
+      onClick={onClick}
     >
       {children}
     </button>

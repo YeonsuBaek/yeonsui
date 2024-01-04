@@ -5,6 +5,7 @@ export interface ButtonProps {
   variant?: "primary" | "secondary" | "link" | "text"
   size?: "small" | "medium" | "large"
   disabled?: boolean
+  onClick?: () => void
 }
 
 export { Button }

@@ -1,5 +1,6 @@
 import type { ComponentStory, Meta } from "@storybook/react"
 import { Button } from "."
+import { action } from "@storybook/addon-actions"
 
 const meta: Meta<typeof Button> = {
   title: "Component/Button",
@@ -14,7 +15,9 @@ const meta: Meta<typeof Button> = {
 export default meta
 
 const InteractionTemplate: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+  <Button onClick={action("clicked")} {...args}>
+    Button
+  </Button>
 )
 
 export const Interactive = InteractionTemplate.bind({})
