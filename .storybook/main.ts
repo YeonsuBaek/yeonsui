@@ -8,15 +8,6 @@ const config: StorybookConfig = {
     "@storybook/preset-create-react-app",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
-    "storybook-addon-sass-postcss",
-    {
-      name: "storybook-addon-sass-postcss",
-      options: {
-        rule: {
-          test: /\.(scss|sass)$/i,
-        },
-      },
-    },
   ],
   framework: {
     name: "@storybook/react-webpack5",
