@@ -116,5 +116,9 @@
     background-color: var(--Gray3);
     border-color: var(--Gray5);
     cursor: default;
+
+    .ui-button-icon path {
+      fill: var(--Font-Color-Disabled);
+    }
   }
 }
