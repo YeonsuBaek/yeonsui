@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { IconProps, SvgPathType } from "."
 import { icons } from "./Icons"
 
-const Icon = ({ icon, size, color }: IconProps) => {
+const Icon = ({ icon, size, color, className = "" }: IconProps) => {
   const {
     width: defWidth,
     height: defHeight,
@@ -27,15 +27,23 @@ const Icon = ({ icon, size, color }: IconProps) => {
   useEffect(() => {
     if (size) {
       switch (size) {
+        case "xsmall":
+          setWidth("16")
+          setHeight("16")
+          break
         case "small":
           setWidth("20")
           setHeight("20")
           break
         case "medium":
+          setWidth("24")
+          setHeight("24")
+          break
+        case "large":
           setWidth("28")
           setHeight("28")
           break
-        case "medium":
+        case "xlarge":
           setWidth("32")
           setHeight("32")
           break
@@ -52,6 +60,7 @@ const Icon = ({ icon, size, color }: IconProps) => {
       height={height}
       viewBox={viewBox}
       fill={fill}
+      className={className}
     >
       {contents}
     </svg>

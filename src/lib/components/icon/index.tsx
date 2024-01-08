@@ -3,8 +3,9 @@ import { IconType } from "./Icons"
 
 export interface IconProps {
   icon: IconType
-  size?: "small" | "medium" | "large"
+  size?: "xsmall" | "small" | "medium" | "large" | "xlarge"
   color?: string
+  className?: string
 }
 
 export interface SvgPathType {

@@ -1,3 +1,4 @@
+import { IconType } from "../icon/Icons"
 import Button from "./Button"
 
 export interface ButtonProps {
@@ -5,6 +6,7 @@ export interface ButtonProps {
   variant?: "primary" | "secondary" | "link" | "text"
   size?: "small" | "medium" | "large"
   disabled?: boolean
+  startIcon?: IconType
   onClick?: () => void
 }
 

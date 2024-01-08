@@ -171,3 +171,76 @@ export const DisabledButton = () => {
     </table>
   )
 }
+
+export const ButtonWithIcon = () => {
+  return (
+    <table>
+      <tr>
+        <td>
+          <Button variant='primary' size='small' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='secondary' size='small' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='link' size='small' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='text' size='small' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Button variant='primary' size='medium' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='secondary' size='medium' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='link' size='medium' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='text' size='medium' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Button variant='primary' size='large' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='secondary' size='large' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='link' size='large' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='text' size='large' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+      </tr>
+    </table>
+  )
+}
