@@ -7,6 +7,7 @@ export interface ButtonProps {
   size?: "small" | "medium" | "large"
   disabled?: boolean
   startIcon?: IconType
+  endIcon?: IconType
   onClick?: () => void
 }
 

@@ -8,6 +8,7 @@ const Button = ({
   size = "medium",
   disabled = false,
   startIcon,
+  endIcon,
   onClick,
 }: ButtonProps) => {
   return (
@@ -25,6 +26,13 @@ const Button = ({
         />
       )}
       <span>{children}</span>
+      {endIcon && (
+        <Icon
+          className='ui-button-icon'
+          icon={endIcon}
+          size={size === "large" ? "small" : "xsmall"}
+        />
+      )}
     </button>
   )
 }

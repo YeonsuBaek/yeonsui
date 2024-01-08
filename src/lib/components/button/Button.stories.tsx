@@ -172,7 +172,7 @@ export const DisabledButton = () => {
   )
 }
 
-export const ButtonWithIcon = () => {
+export const ButtonWithStartIcon = () => {
   return (
     <table>
       <tr>
@@ -237,6 +237,79 @@ export const ButtonWithIcon = () => {
         </td>
         <td>
           <Button variant='text' size='large' startIcon='Setting'>
+            Button Title
+          </Button>
+        </td>
+      </tr>
+    </table>
+  )
+}
+
+export const ButtonWithEndIcon = () => {
+  return (
+    <table>
+      <tr>
+        <td>
+          <Button variant='primary' size='small' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='secondary' size='small' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='link' size='small' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='text' size='small' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Button variant='primary' size='medium' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='secondary' size='medium' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='link' size='medium' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='text' size='medium' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Button variant='primary' size='large' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='secondary' size='large' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='link' size='large' endIcon='CaretDown'>
+            Button Title
+          </Button>
+        </td>
+        <td>
+          <Button variant='text' size='large' endIcon='CaretDown'>
             Button Title
           </Button>
         </td>
