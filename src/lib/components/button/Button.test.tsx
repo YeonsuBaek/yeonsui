@@ -13,4 +13,31 @@ describe("Button test", () => {
     fireEvent.click(btn)
     expect(handleClick).toHaveBeenCalledTimes(1)
   })
+
+  test("Button has icons", () => {
+    const { container } = render(
+      <Button startIcon='Bell' endIcon='CaretDown'>
+        Button
+      </Button>
+    )
+
+    const btn = container as HTMLButtonElement
+    expect(btn).toBeTruthy()
+
+    expect(btn.querySelectorAll(".ui-button-icon").length).toBe(2)
+  })
+
+  type size = "small" | "medium" | "large"
+  test.each<size>(["small", "medium", "large"])("Size of icons", (size) => {
+    const { container } = render(
+      <Button size={size} startIcon='Bell' endIcon='CaretDown'>
+        Button
+      </Button>
+    )
+
+    const btn = container as HTMLButtonElement
+    expect(btn.querySelector(".ui-button-icon")?.getAttribute("width")).toBe(
+      size === "large" ? "20" : "16"
+    )
+  })
 })
