@@ -1,0 +1,145 @@
+.ui-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid;
+  border-radius: 2px;
+  outline: 0;
+  font: var(--Font-Body-Regular);
+  cursor: pointer;
+
+  &.small {
+    height: 24px;
+    padding: 0 6px;
+  }
+
+  &.medium {
+    height: 32px;
+    padding: 0 15px;
+  }
+
+  &.large {
+    height: 40px;
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  &.primary {
+    color: var(--Gray1);
+    background-color: var(--Primary-Color-6);
+    border-color: var(--Primary-Color-6);
+
+    .ui-button-icon path {
+      fill: var(--Gray1);
+    }
+
+    &:hover {
+      background-color: var(--Primary-Color-5);
+      border-color: var(--Primary-Color-5);
+    }
+    &:active {
+      background-color: var(--Primary-Color-7);
+      border-color: var(--Primary-Color-7);
+    }
+  }
+
+  &.secondary {
+    color: var(--Font-Color-Title);
+    background-color: var(--Gray1);
+    border-color: var(--Gray5);
+
+    .ui-button-icon path {
+      fill: var(--Font-Color-Title);
+    }
+
+    &:hover {
+      color: var(--Primary-Color-5);
+      border-color: var(--Primary-Color-5);
+
+      .ui-button-icon path {
+        fill: var(--Primary-Color-5);
+      }
+    }
+    &:active {
+      color: var(--Primary-Color-7);
+      border-color: var(--Primary-Color-7);
+
+      .ui-button-icon path {
+        fill: var(--Primary-Color-7);
+      }
+    }
+  }
+
+  &.link {
+    color: var(--Primary-Color-6);
+    background-color: transparent;
+    border-color: transparent;
+
+    .ui-button-icon path {
+      fill: var(--Primary-Color-6);
+    }
+
+    &:active {
+      color: var(--Primary-Color-7);
+
+      .ui-button-icon path {
+        fill: var(--Primary-Color-7);
+      }
+    }
+
+    &:disabled,
+    &:disabled:is(:hover, :active) {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  &.text {
+    color: var(--Font-Color-Title);
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover {
+      background-color: var(--Gray2);
+    }
+    &:active {
+      background-color: var(--Gray3);
+    }
+
+    &:disabled,
+    &:disabled:is(:hover, :active) {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  &:disabled,
+  &:disabled:is(:hover, :active) {
+    color: var(--Font-Color-Disabled);
+    background-color: var(--Gray3);
+    border-color: var(--Gray5);
+    cursor: default;
+
+    .ui-button-icon path {
+      fill: var(--Font-Color-Disabled);
+    }
+  }
+
+  &.ui-icon-button {
+    padding: 0;
+
+    &.small {
+      min-width: 24px;
+    }
+    &.medium {
+      min-width: 32px;
+    }
+    &.large {
+      min-width: 40px;
+    }
+    &.circle {
+      border-radius: 100px;
+    }
+  }
+}
