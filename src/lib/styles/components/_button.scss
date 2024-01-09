@@ -1,6 +1,7 @@
 .ui-button {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   border: 1px solid;
   border-radius: 2px;
@@ -9,16 +10,19 @@
   cursor: pointer;
 
   &.small {
-    padding: 0 7px;
+    height: 24px;
+    padding: 0 6px;
   }
 
   &.medium {
-    padding: 4px 15px;
+    height: 32px;
+    padding: 0 15px;
   }
 
   &.large {
+    height: 40px;
     font-size: 16px;
-    padding: 6px 15px;
+    padding: 0 15px;
   }
 
   &.primary {
@@ -119,6 +123,23 @@
 
     .ui-button-icon path {
       fill: var(--Font-Color-Disabled);
+    }
+  }
+
+  &.ui-icon-button {
+    padding: 0;
+
+    &.small {
+      min-width: 24px;
+    }
+    &.medium {
+      min-width: 32px;
+    }
+    &.large {
+      min-width: 40px;
+    }
+    &.circle {
+      border-radius: 100px;
     }
   }
 }

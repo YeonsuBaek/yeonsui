@@ -1,5 +1,5 @@
 import type { ComponentStory, Meta } from "@storybook/react"
-import { Button } from "."
+import { Button, IconButton } from "."
 import { action } from "@storybook/addon-actions"
 
 const meta: Meta<typeof Button> = {
@@ -312,6 +312,116 @@ export const ButtonWithEndIcon = () => {
           <Button variant='text' size='large' endIcon='CaretDown'>
             Button Title
           </Button>
+        </td>
+      </tr>
+    </table>
+  )
+}
+
+export const CircleIconButton = () => {
+  return (
+    <table>
+      <tr>
+        <td>
+          <IconButton variant='primary' size='small' icon='Like' />
+        </td>
+        <td>
+          <IconButton variant='secondary' size='small' icon='Like' />
+        </td>
+        <td>
+          <IconButton size='small' icon='Like' disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <IconButton variant='primary' size='medium' icon='Like' />
+        </td>
+        <td>
+          <IconButton variant='secondary' size='medium' icon='Like' />
+        </td>
+        <td>
+          <IconButton size='medium' icon='Like' disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <IconButton variant='primary' size='large' icon='Like' />
+        </td>
+        <td>
+          <IconButton variant='secondary' size='large' icon='Like' />
+        </td>
+        <td>
+          <IconButton size='large' icon='Like' disabled />
+        </td>
+      </tr>
+    </table>
+  )
+}
+
+export const SquareIconButton = () => {
+  return (
+    <table>
+      <tr>
+        <td>
+          <IconButton
+            variant='primary'
+            shape='square'
+            size='small'
+            icon='Like'
+          />
+        </td>
+        <td>
+          <IconButton
+            variant='secondary'
+            shape='square'
+            size='small'
+            icon='Like'
+          />
+        </td>
+        <td>
+          <IconButton size='small' shape='square' icon='Like' disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <IconButton
+            variant='primary'
+            shape='square'
+            size='medium'
+            icon='Like'
+          />
+        </td>
+        <td>
+          <IconButton
+            variant='secondary'
+            shape='square'
+            size='medium'
+            icon='Like'
+          />
+        </td>
+        <td>
+          <IconButton size='medium' shape='square' icon='Like' disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <IconButton
+            variant='primary'
+            shape='square'
+            size='large'
+            icon='Like'
+          />
+        </td>
+        <td>
+          <IconButton
+            variant='secondary'
+            shape='square'
+            size='large'
+            icon='Like'
+          />
+        </td>
+        <td>
+          <IconButton size='large' shape='square' icon='Like' disabled />
         </td>
       </tr>
     </table>
