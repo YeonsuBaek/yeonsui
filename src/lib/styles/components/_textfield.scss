@@ -1,6 +1,8 @@
 .ui-textfield {
   position: relative;
   display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   border: 1px solid var(--Gray5);
   border-radius: 2px;
@@ -13,11 +15,14 @@
 
   &-input {
     width: 100%;
+    height: 100%;
     border: 0;
     outline: 0;
     padding: 0;
     font: var(--Font-Body-Regular);
     color: var(--Font-Color-Title);
+    background-color: transparent;
+    z-index: 10;
 
     &::placeholder,
     &:disabled {
@@ -34,25 +39,51 @@
     font: var(--Font-Body-Regular);
   }
 
+  .ui-textfield-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 4px;
+  }
+
   &.small {
     height: 22px;
-    padding: 0px 7px;
+    .ui-textfield-input {
+      padding: 0px 7px;
+    }
+    .ui-textfield-icon {
+      right: 7px;
+    }
   }
   &.medium {
     height: 30px;
-    padding: 0px 11px;
+    .ui-textfield-input {
+      padding: 0px 11px;
+    }
+    .ui-textfield-icon {
+      right: 11px;
+    }
   }
   &.large {
     height: 38px;
-    padding: 0px 11px;
-
+    .ui-textfield-input {
+      padding: 0px 11px;
+    }
     .ui-textfield-input,
     .ui-textfield-suffix {
       font-size: 16px;
     }
+    .ui-textfield-icon {
+      right: 11px;
+    }
   }
 
   &.disabled {
-    background-color: var(--Gray-3);
+    background-color: var(--Gray3);
+    cursor: default;
+
+    .ui-textfield-icon path {
+      fill: rgba(var(--Gray13RGB), 0.25);
+    }
   }
 }

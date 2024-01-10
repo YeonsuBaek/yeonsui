@@ -1,5 +1,6 @@
 import { ChangeEvent } from "react"
 import TextField from "./TextField"
+import { IconType } from "../icon/Icons"
 
 export interface TextFieldProps {
   id: string
@@ -9,6 +10,7 @@ export interface TextFieldProps {
   size?: "small" | "medium" | "large"
   disabled?: boolean
   suffix?: string
+  icon?: IconType
 }
 
 export { TextField }
