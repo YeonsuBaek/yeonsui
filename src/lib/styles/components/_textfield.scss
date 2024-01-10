@@ -1,6 +1,5 @@
 .ui-textfield {
   display: inline-flex;
-  font: var(--Font-Body-Regular);
   border: 1px solid var(--Gray5);
   border-radius: 2px;
   cursor: text;
@@ -11,14 +10,30 @@
   }
 
   input {
-    padding: 4px 11px;
-    width: 192px;
+    width: 100%;
     border: 0;
     outline: 0;
+    font: var(--Font-Body-Regular);
     color: var(--Font-Color-Title);
 
-    &::placeholder {
+    &::placeholder,
+    &:disabled {
       color: rgba(var(--Gray13RGB), 0.25);
     }
+  }
+
+  &.small input {
+    padding: 0px 7px;
+  }
+  &.medium input {
+    padding: 4px 11px;
+  }
+  &.large input {
+    padding: 7px 11px;
+    font-size: 16px;
+  }
+
+  &.disabled {
+    background-color: var(--Gray-3);
   }
 }
