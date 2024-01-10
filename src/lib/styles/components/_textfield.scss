@@ -1,0 +1,24 @@
+.ui-textfield {
+  display: inline-flex;
+  font: var(--Font-Body-Regular);
+  border: 1px solid var(--Gray5);
+  border-radius: 2px;
+  cursor: text;
+  transition: border-color 200ms ease-in-out;
+
+  &:has(input:focus) {
+    border-color: var(--Primary-Color-5);
+  }
+
+  input {
+    padding: 4px 11px;
+    width: 192px;
+    border: 0;
+    outline: 0;
+    color: var(--Font-Color-Title);
+
+    &::placeholder {
+      color: rgba(var(--Gray13RGB), 0.25);
+    }
+  }
+}
