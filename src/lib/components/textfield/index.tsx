@@ -8,6 +8,7 @@ export interface TextFieldProps {
   placeholder?: string
   size?: "small" | "medium" | "large"
   disabled?: boolean
+  suffix?: string
 }
 
 export { TextField }
