@@ -26,7 +26,7 @@
 
     &::placeholder,
     &:disabled {
-      color: rgba(var(--Gray13RGB), 0.25);
+      color: var(--Font-Color-Disabled);
     }
   }
 
@@ -44,7 +44,7 @@
     transform: translateY(-50%);
 
     path {
-      fill: rgba(var(--Gray13RGB), 0.25);
+      fill: var(--Font-Color-Title);
     }
   }
 
@@ -94,7 +94,11 @@
     cursor: default;
 
     .ui-textfield-icon path {
-      fill: rgba(var(--Gray13RGB), 0.25);
+      fill: var(--Font-Color-Disabled);
+    }
+
+    .ui-textfield-suffix {
+      color: var(--Font-Color-Disabled);
     }
   }
 }
