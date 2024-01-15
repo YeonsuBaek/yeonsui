@@ -43,7 +43,10 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: 4px;
+
+    path {
+      fill: rgba(var(--Gray13RGB), 0.25);
+    }
   }
 
   &.small {
@@ -52,7 +55,7 @@
       padding: 0px 7px;
     }
     .ui-textfield-icon {
-      right: 7px;
+      left: 7px;
     }
   }
   &.medium {
@@ -61,7 +64,7 @@
       padding: 0px 11px;
     }
     .ui-textfield-icon {
-      right: 11px;
+      left: 11px;
     }
   }
   &.large {
@@ -74,7 +77,7 @@
       font-size: 16px;
     }
     .ui-textfield-icon {
-      right: 11px;
+      left: 11px;
     }
   }
 

@@ -49,7 +49,7 @@ const TextField = ({
         placeholder={placeholder}
         disabled={disabled}
         style={{
-          paddingRight: `${DEFAULT_RIGHT_PADDING[size] + iconWidth}px`,
+          paddingLeft: `${DEFAULT_RIGHT_PADDING[size] + iconWidth}px`,
         }}
       />
       {suffix && <span className="ui-textfield-suffix">{suffix}</span>}
