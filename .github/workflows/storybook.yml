@@ -1,15 +1,15 @@
 # Workflow name
-name: 'Chromatic Deployment'
+name: "Chromatic Deployment"
 
 on:
   pull_request:
     branches: [version/1.0.0]
     paths:
-      - '**.stories.tsx'
+      - "**.stories.tsx"
   push:
     branches: [version/1.0.0]
     paths:
-      - '**.stories.tsx'
+      - "**.stories.tsx"
 
 jobs:
   chromatic-deployment:
@@ -40,4 +40,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          message: '🚀 **storybook**: ${{ steps.publish_chromatic.outputs.storybookUrl }}'
+          message: "🚀 **storybook**: ${{ steps.publish_chromatic.outputs.storybookUrl }}"
+          registry-url: "https://registry.npmjs.org/"
+          node-version-file: ".nvmrc"
+          cache: "npm"

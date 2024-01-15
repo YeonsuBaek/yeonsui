@@ -14,9 +14,31 @@ Explore the UI through [Storybook](https://65a2410191d174e557802180-ohieifrhvn.c
 
 ## 🎨 Components
 
+- [0. Theme](#theme)
 - [1. Icon](#icon)
 - [2. Button](#button)
 - [3. TextField](#textfield)
+
+### Theme
+
+#### Usage
+
+```tsx
+return (
+  <html>
+    <body className="theme-light cyan"></body>
+  </html>
+)
+```
+
+#### Class
+
+| Type                                                                                                         | Description                                                                                |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| default                                                                                                      | `theme-light`                                                                              |
+| [color](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/foundation-colors--color-set) | `red` \| `volcano` \| `sunset` \| `polar` \| `cyan` \| `daybreak` \| `purple` \| `magenta` |
+
+**Must apply both default and colour theme.**
 
 ### Icon
 
@@ -32,13 +54,11 @@ return <Icon icon="Star" />
 
 #### Props
 
-| Name  | Type                                                                                                            | Desciption                                |
-| ----- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| icon  | keyof typeof [icons](https://github.com/YeonsuBaek/yeonsui/blob/version/1.0.0/src/lib/components/icon/Icons.ts) | **required**                              |
-| size  | `small` \| `medium` \| `large`                                                                                  | `medium`                                  |
-| color | string                                                                                                          | `--Font-Color-Title`: rgba(0, 0, 0, 0.85) |
-
-#### Example
+| Name  | Type                                                                                                                     | Desciption           |
+| ----- | ------------------------------------------------------------------------------------------------------------------------ | -------------------- |
+| icon  | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) | **required**         |
+| size  | `small` \| `medium` \| `large`                                                                                           | `medium`             |
+| color | string                                                                                                                   | `--Font-Color-Title` |
 
 ### Button
 
@@ -58,15 +78,15 @@ return (
 
 #### Props
 
-| Name      | Type                                                                                                            | Description  |
-| --------- | --------------------------------------------------------------------------------------------------------------- | ------------ |
-| children  | keyof typeof [icons](https://github.com/YeonsuBaek/yeonsui/blob/version/1.0.0/src/lib/components/icon/Icons.ts) | **required** |
-| variant   | `primary` \| `secondary` \| `link` \| `text`                                                                    | `primary`    |
-| size      | `small` \| `medium` \| `large`                                                                                  | `medium`     |
-| disabled  | boolean                                                                                                         | `false`      |
-| startIcon | keyof typeof [icons](https://github.com/YeonsuBaek/yeonsui/blob/version/1.0.0/src/lib/components/icon/Icons.ts) |              |
-| endIcon   | keyof typeof [icons](https://github.com/YeonsuBaek/yeonsui/blob/version/1.0.0/src/lib/components/icon/Icons.ts) |              |
-| onClick   | `() => void`                                                                                                    |              |
+| Name      | Type                                                                                                                     | Description  |
+| --------- | ------------------------------------------------------------------------------------------------------------------------ | ------------ |
+| children  | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) | **required** |
+| variant   | `primary` \| `secondary` \| `link` \| `text`                                                                             | `primary`    |
+| size      | `small` \| `medium` \| `large`                                                                                           | `medium`     |
+| disabled  | boolean                                                                                                                  | `false`      |
+| startIcon | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |              |
+| endIcon   | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |              |
+| onClick   | `() => void`                                                                                                             |              |
 
 ### TextField
 
@@ -90,13 +110,13 @@ return (
 
 #### Props
 
-| Name        | Type                                                                                                            | Description       |
-| ----------- | --------------------------------------------------------------------------------------------------------------- | ----------------- |
-| id          | string                                                                                                          | **required**      |
-| value       | string                                                                                                          | **required**      |
-| onChange    | (e: ChangeEvent<HTMLInputElement>) => void                                                                      | **required**      |
-| placeholder | string                                                                                                          |                   |
-| size        | `small` \| `medium` \| `large`                                                                                  | default: `medium` |
-| disabled    | boolean                                                                                                         | default: `false`  |
-| suffix      | string                                                                                                          |                   |
-| icon        | keyof typeof [icons](https://github.com/YeonsuBaek/yeonsui/blob/version/1.0.0/src/lib/components/icon/Icons.ts) |                   |
+| Name        | Type                                                                                                                     | Description       |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| id          | string                                                                                                                   | **required**      |
+| value       | string                                                                                                                   | **required**      |
+| onChange    | (e: ChangeEvent<HTMLInputElement>) => void                                                                               | **required**      |
+| placeholder | string                                                                                                                   |                   |
+| size        | `small` \| `medium` \| `large`                                                                                           | default: `medium` |
+| disabled    | boolean                                                                                                                  | default: `false`  |
+| suffix      | string                                                                                                                   |                   |
+| icon        | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |                   |
