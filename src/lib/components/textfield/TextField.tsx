@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { TextFieldProps } from "."
 import { Icon } from "../icon"
 
@@ -24,7 +24,9 @@ const TextField = ({
     large: 20,
   }
 
+  const suffixRef = useRef(null)
   const [iconWidth, setIconWidth] = useState<number>(0)
+  const [suffixWidth, setSuffixWidth] = useState<number>(0)
   const iconSize = useMemo(
     () => (size === "large" ? "small" : "xsmall"),
     [size]
@@ -33,10 +35,13 @@ const TextField = ({
   useEffect(() => {
     if (icon) {
       setIconWidth(ICON_RIGHT_PADDING + ICON_SIZE[size])
-    } else {
-      setIconWidth(0)
     }
-  }, [size])
+    if (suffix && suffixRef && suffixRef.current) {
+      const suffixElem = suffixRef.current as HTMLElement
+      const rect = suffixElem.getBoundingClientRect()
+      setSuffixWidth(rect.width + 4)
+    }
+  }, [size, icon, suffix])
 
   return (
     <div className={`ui-textfield ${size} ${disabled ? "disabled" : ""}`}>
@@ -50,9 +55,14 @@ const TextField = ({
         disabled={disabled}
         style={{
           paddingLeft: `${DEFAULT_RIGHT_PADDING[size] + iconWidth}px`,
+          paddingRight: `${DEFAULT_RIGHT_PADDING[size] + suffixWidth}px`,
         }}
       />
-      {suffix && <span className="ui-textfield-suffix">{suffix}</span>}
+      {suffix && (
+        <span className="ui-textfield-suffix" ref={suffixRef}>
+          {suffix}
+        </span>
+      )}
       {icon && (
         <Icon className="ui-textfield-icon" size={iconSize} icon={icon} />
       )}
