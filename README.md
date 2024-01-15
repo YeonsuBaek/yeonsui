@@ -10,7 +10,7 @@ $ npm i @yeonsubaek/yeonsui
 
 ### Demo
 
-Explore the UI through [Storybook](https://65a2410191d174e557802180-enbmlbsviz.chromatic.com/)
+Explore the UI through [Storybook](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com)
 
 ## 🎨 Components
 
