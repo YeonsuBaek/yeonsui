@@ -31,5 +31,118 @@ export const Interactive = TextFieldTemplate.bind({})
 Interactive.args = {
   placeholder: "example",
   size: "medium",
-  icon: "Calendar",
+}
+
+export const DefaultTextField = () => {
+  return (
+    <div style={{ width: "300px" }}>
+      <TextField id="storybook-textfield-1" value="" onChange={() => {}} />
+      <br />
+      <br />
+      <TextField
+        id="storybook-textfield-2"
+        value=""
+        onChange={() => {}}
+        disabled
+      />
+      <br />
+      <br />
+      <TextField
+        id="storybook-textfield-3"
+        value=""
+        onChange={() => {}}
+        placeholder="placeholder"
+      />
+      <br />
+      <br />
+      <TextField
+        id="storybook-textfield-4"
+        value=""
+        onChange={() => {}}
+        placeholder="placeholder"
+        disabled
+      />
+      <br />
+      <br />
+      <TextField
+        id="storybook-textfield-5"
+        value="example"
+        onChange={() => {}}
+      />
+      <br />
+      <br />
+      <TextField
+        id="storybook-textfield-6"
+        value="example"
+        onChange={() => {}}
+        disabled
+      />
+    </div>
+  )
+}
+
+export const TextFieldWithSuffix = () => {
+  return (
+    <div style={{ width: "300px" }}>
+      <TextField
+        id="storybook-textfield-suffix-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter a size"
+        suffix="px"
+      />
+      <br />
+      <br />
+      <TextField
+        id="storybook-textfield-suffix-2"
+        value="100"
+        onChange={() => {}}
+        placeholder="Enter a size"
+        suffix="px"
+      />
+      <br />
+      <br />
+      <TextField
+        id="storybook-textfield-suffix-3"
+        value="100"
+        onChange={() => {}}
+        placeholder="Enter a size"
+        suffix="px"
+        disabled
+      />
+    </div>
+  )
+}
+
+export const TextFieldWithIcon = () => {
+  return (
+    <div style={{ width: "300px" }}>
+      <TextField
+        id="storybook-textfield-icon-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your email"
+        icon="Mail"
+      />
+      <br />
+      <br />
+      <TextField
+        id="storybook-textfield-icon-2"
+        value="email@gmail.com"
+        onChange={() => {}}
+        placeholder="Enter a size"
+        icon="Mail"
+      />
+      <br />
+      <br />
+      <TextField
+        id="storybook-textfield-icon-3"
+        value="email@gmail.com"
+        onChange={() => {}}
+        placeholder="Enter a size"
+        icon="Mail"
+        disabled
+      />
+    </div>
+  )
 }
