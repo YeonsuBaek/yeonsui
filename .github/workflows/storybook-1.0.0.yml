@@ -30,7 +30,7 @@ jobs:
         id: publish_chromatic_1
         uses: chromaui/action@v1
         with:
-          projectToken: ${{ secrets.YEONSUI_CHROMATIC_TOKEN  }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN  }}
           buildScriptName: build-storybook
           onlyChanged: true
 
