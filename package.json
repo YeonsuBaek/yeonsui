@@ -18,6 +18,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.69.7",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -30,7 +31,6 @@
     "type": "tsc",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_1e53f7ef580a4c9"
   },
   "eslintConfig": {
     "extends": [
