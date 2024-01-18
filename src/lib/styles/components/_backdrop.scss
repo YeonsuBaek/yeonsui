@@ -7,6 +7,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--Font-Color-Secondary);
   z-index: 0;
+
+  &.dark {
+    background-color: var(--Font-Color-Secondary);
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
 }
