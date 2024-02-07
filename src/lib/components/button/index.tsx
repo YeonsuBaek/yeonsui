@@ -16,7 +16,7 @@ export interface ButtonProps {
 export interface IconButtonProps {
   variant?: 'primary' | 'secondary'
   size?: 'small' | 'medium' | 'large'
-  shape?: 'circle' | 'square'
+  shape?: 'default' | 'circle' | 'square'
   disabled?: boolean
   icon: IconType
   onClick?: () => void
