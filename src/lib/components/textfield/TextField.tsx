@@ -1,16 +1,17 @@
-import { useEffect, useMemo, useRef, useState } from "react"
-import { TextFieldProps } from "."
-import { Icon } from "../icon"
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { TextFieldProps } from '.'
+import { Icon } from '../icon'
 
 const TextField = ({
   id,
   value,
   onChange,
-  placeholder = "",
-  size = "medium",
+  placeholder = '',
+  size = 'medium',
   disabled = false,
   suffix,
   icon,
+  type = 'text',
 }: TextFieldProps) => {
   const DEFAULT_RIGHT_PADDING = {
     small: 7,
@@ -27,10 +28,7 @@ const TextField = ({
   const suffixRef = useRef(null)
   const [iconWidth, setIconWidth] = useState<number>(0)
   const [suffixWidth, setSuffixWidth] = useState<number>(0)
-  const iconSize = useMemo(
-    () => (size === "large" ? "small" : "xsmall"),
-    [size]
-  )
+  const iconSize = useMemo(() => (size === 'large' ? 'small' : 'xsmall'), [size])
 
   useEffect(() => {
     if (icon) {
@@ -44,10 +42,10 @@ const TextField = ({
   }, [size, icon, suffix])
 
   return (
-    <div className={`ui-textfield ${size} ${disabled ? "disabled" : ""}`}>
+    <div className={`ui-textfield ${size} ${disabled ? 'disabled' : ''}`}>
       <input
         className="ui-textfield-input"
-        type="text"
+        type={type}
         id={id}
         value={value}
         onChange={onChange}
@@ -63,9 +61,7 @@ const TextField = ({
           {suffix}
         </span>
       )}
-      {icon && (
-        <Icon className="ui-textfield-icon" size={iconSize} icon={icon} />
-      )}
+      {icon && <Icon className="ui-textfield-icon" size={iconSize} icon={icon} />}
     </div>
   )
 }
