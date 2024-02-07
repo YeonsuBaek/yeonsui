@@ -1,12 +1,13 @@
-import type { ComponentStory, Meta } from "@storybook/react"
-import { TextField } from "."
-import { useState } from "react"
+import type { ComponentStory, Meta } from '@storybook/react'
+import { TextField } from '.'
+import { useState } from 'react'
+import PasswordTextField from './PasswordTextField'
 
 const meta: Meta<typeof TextField> = {
-  title: "Component/TextField",
+  title: 'Component/TextField',
   component: TextField,
   argTypes: {
-    size: ["small", "medium", "large"],
+    size: ['small', 'medium', 'large'],
     disabled: [true, false],
   },
 }
@@ -14,76 +15,47 @@ const meta: Meta<typeof TextField> = {
 export default meta
 
 const TextFieldTemplate: ComponentStory<typeof TextField> = (args) => {
-  const [text, setText] = useState<string>("")
+  const [text, setText] = useState<string>('')
 
   return (
-    <div style={{ width: "200px" }}>
-      <TextField
-        {...args}
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+    <div style={{ width: '200px' }}>
+      <TextField {...args} value={text} onChange={(e) => setText(e.target.value)} />
     </div>
   )
 }
 
 export const Interactive = TextFieldTemplate.bind({})
 Interactive.args = {
-  placeholder: "example",
-  size: "medium",
+  placeholder: 'example',
+  size: 'medium',
 }
 
 export const DefaultTextField = () => {
   return (
-    <div style={{ width: "300px" }}>
+    <div style={{ width: '300px' }}>
       <TextField id="storybook-textfield-1" value="" onChange={() => {}} />
       <br />
       <br />
-      <TextField
-        id="storybook-textfield-2"
-        value=""
-        onChange={() => {}}
-        disabled
-      />
+      <TextField id="storybook-textfield-2" value="" onChange={() => {}} disabled />
       <br />
       <br />
-      <TextField
-        id="storybook-textfield-3"
-        value=""
-        onChange={() => {}}
-        placeholder="placeholder"
-      />
+      <TextField id="storybook-textfield-3" value="" onChange={() => {}} placeholder="placeholder" />
       <br />
       <br />
-      <TextField
-        id="storybook-textfield-4"
-        value=""
-        onChange={() => {}}
-        placeholder="placeholder"
-        disabled
-      />
+      <TextField id="storybook-textfield-4" value="" onChange={() => {}} placeholder="placeholder" disabled />
       <br />
       <br />
-      <TextField
-        id="storybook-textfield-5"
-        value="example"
-        onChange={() => {}}
-      />
+      <TextField id="storybook-textfield-5" value="example" onChange={() => {}} />
       <br />
       <br />
-      <TextField
-        id="storybook-textfield-6"
-        value="example"
-        onChange={() => {}}
-        disabled
-      />
+      <TextField id="storybook-textfield-6" value="example" onChange={() => {}} disabled />
     </div>
   )
 }
 
 export const TextFieldWithSuffix = () => {
   return (
-    <div style={{ width: "300px" }}>
+    <div style={{ width: '300px' }}>
       <TextField
         id="storybook-textfield-suffix-1"
         value=""
@@ -116,7 +88,7 @@ export const TextFieldWithSuffix = () => {
 
 export const TextFieldWithIcon = () => {
   return (
-    <div style={{ width: "300px" }}>
+    <div style={{ width: '300px' }}>
       <TextField
         id="storybook-textfield-icon-1"
         value=""
@@ -141,6 +113,66 @@ export const TextFieldWithIcon = () => {
         onChange={() => {}}
         placeholder="Enter a size"
         icon="Mail"
+        disabled
+      />
+    </div>
+  )
+}
+
+export const TextFieldForPassword = () => {
+  return (
+    <div style={{ width: '300px' }}>
+      <PasswordTextField
+        id="storybook-textfield-password-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your password"
+        size="small"
+      />
+      <br />
+      <br />
+      <PasswordTextField
+        id="storybook-textfield-password-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your password"
+      />
+      <br />
+      <br />
+      <PasswordTextField
+        id="storybook-textfield-password-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your password"
+        size="large"
+      />
+      <br />
+      <br />
+      <PasswordTextField
+        id="storybook-textfield-password-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your password"
+        size="small"
+        disabled
+      />
+      <br />
+      <br />
+      <PasswordTextField
+        id="storybook-textfield-password-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your password"
+        disabled
+      />
+      <br />
+      <br />
+      <PasswordTextField
+        id="storybook-textfield-password-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your password"
+        size="large"
         disabled
       />
     </div>

@@ -141,5 +141,28 @@
     &.circle {
       border-radius: 100px;
     }
+    &.default {
+      background-color: transparent;
+      border: 0;
+
+      &.primary {
+        path {
+          fill: var(--Primary-Color-6);
+        }
+
+        &:hover path {
+          fill: var(--Primary-Color-5);
+        }
+        &:active path {
+          fill: var(--Primary-Color-7);
+        }
+      }
+
+      &:disabled path,
+      &:disabled:is(:hover, :active) path {
+        fill: var(--Font-Color-Disabled);
+        cursor: default;
+      }
+    }
   }
 }

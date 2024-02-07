@@ -1,16 +1,21 @@
-import { ChangeEvent } from "react"
-import TextField from "./TextField"
-import { IconType } from "../icon/Icons"
+import { ChangeEvent } from 'react'
+import TextField from './TextField'
+import PasswordTextField from './PasswordTextField'
+import { IconType } from '../icon/Icons'
 
-export interface TextFieldProps {
+export interface DefaultTextFieldProps {
   id: string
   value: string
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
   placeholder?: string
-  size?: "small" | "medium" | "large"
+  size?: 'small' | 'medium' | 'large'
   disabled?: boolean
-  suffix?: string
-  icon?: IconType
 }
 
-export { TextField }
+export interface TextFieldProps extends DefaultTextFieldProps {
+  suffix?: string
+  icon?: IconType
+  type?: 'text' | 'password' | 'file'
+}
+
+export { TextField, PasswordTextField }
