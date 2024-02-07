@@ -146,6 +146,35 @@ export const TextFieldForPassword = () => {
         placeholder="Enter your password"
         size="large"
       />
+      <br />
+      <br />
+      <PasswordTextField
+        id="storybook-textfield-password-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your password"
+        size="small"
+        disabled
+      />
+      <br />
+      <br />
+      <PasswordTextField
+        id="storybook-textfield-password-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your password"
+        disabled
+      />
+      <br />
+      <br />
+      <PasswordTextField
+        id="storybook-textfield-password-1"
+        value=""
+        onChange={() => {}}
+        placeholder="Enter your password"
+        size="large"
+        disabled
+      />
     </div>
   )
 }

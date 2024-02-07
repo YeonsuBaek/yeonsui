@@ -22,6 +22,7 @@ const PasswordTextField = ({ size = 'medium', disabled, id, value, onChange, pla
         variant="secondary"
         onClick={() => setIsShow((prev) => !prev)}
         size={iconSize}
+        disabled={disabled}
       />
     </div>
   )
