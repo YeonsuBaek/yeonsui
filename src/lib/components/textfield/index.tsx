@@ -1,5 +1,6 @@
 import { ChangeEvent } from 'react'
 import TextField from './TextField'
+import PasswordTextField from './PasswordTextField'
 import { IconType } from '../icon/Icons'
 
 export interface DefaultTextFieldProps {
@@ -17,4 +18,4 @@ export interface TextFieldProps extends DefaultTextFieldProps {
   type?: 'text' | 'password' | 'file'
 }
 
-export { TextField }
+export { TextField, PasswordTextField }
