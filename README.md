@@ -17,7 +17,9 @@ Explore the UI through [Storybook](https://65a2410191d174e557802180-ohieifrhvn.c
 - [0. Theme](#theme)
 - [1. Icon](#icon)
 - [2. Button](#button)
+  - [IconButton](#iconbutton)
 - [3. TextField](#textfield)
+  - [PasswordTextField](#password)
 
 ### Theme
 
@@ -45,7 +47,7 @@ return (
 #### Usage
 
 ```tsx
-import { Icon } from "@yeonsubaek/yeonsui"
+import { Icon } from '@yeonsubaek/yeonsui'
 ```
 
 ```tsx
@@ -65,7 +67,7 @@ return <Icon icon="Star" />
 #### Usage
 
 ```tsx
-import { Button } from "@yeonsubaek/yeonsui"
+import { Button } from '@yeonsubaek/yeonsui'
 ```
 
 ```tsx
@@ -78,34 +80,52 @@ return (
 
 #### Props
 
-| Name      | Type                                                                                                                     | Description  |
-| --------- | ------------------------------------------------------------------------------------------------------------------------ | ------------ |
-| children  | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) | **required** |
-| variant   | `primary` \| `secondary` \| `link` \| `text`                                                                             | `primary`    |
-| size      | `small` \| `medium` \| `large`                                                                                           | `medium`     |
-| disabled  | boolean                                                                                                                  | `false`      |
-| startIcon | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |              |
-| endIcon   | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |              |
-| onClick   | `() => void`                                                                                                             |              |
+| Name      | Type                                                                                                                     | Description       |
+| --------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| children  | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) | **required**      |
+| variant   | `primary` \| `secondary` \| `link` \| `text`                                                                             | `primary`         |
+| size      | `small` \| `medium` \| `large`                                                                                           | `medium`          |
+| disabled  | boolean                                                                                                                  | `false`           |
+| startIcon | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |                   |
+| endIcon   | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |                   |
+| onClick   | `() => void`                                                                                                             |                   |
+| type      | `button` \| `submit` \| `reset`                                                                                          | default: `button` |
+
+### IconButton
+
+#### Usage
+
+```tsx
+import { IconButton } from '@yeonsubaek/yeonsui'
+```
+
+```tsx
+return <IconButton icon="Heart" />
+```
+
+#### Props
+
+| Name     | Type                                                                                                                     | Description        |
+| -------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| icon     | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) | **requried**       |
+| variant  | `primary` \| `secondary`                                                                                                 | default: `primary` |
+| size     | `small` \| `medium` \| `large`                                                                                           | default: `medium`  |
+| shape    | `default` \| `circle` \| `square`                                                                                        | default: `default` |
+| disabled | boolean                                                                                                                  | `false`            |
+| onClick  | `() => void`                                                                                                             |                    |
 
 ### TextField
 
 #### Usage
 
 ```tsx
-import { TextField } from "@yeonsubaek/yeonsui"
+import { TextField } from '@yeonsubaek/yeonsui'
 ```
 
 ```tsx
-const [text, setText] = useState<string>("")
+const [text, setText] = useState<string>('')
 
-return (
-  <TextField
-    id="example-textfield"
-    value={text}
-    onChange={(e) => setText(e.target.value)}
-  />
-)
+return <TextField id="example-textfield" value={text} onChange={(e) => setText(e.target.value)} />
 ```
 
 #### Props
@@ -120,3 +140,29 @@ return (
 | disabled    | boolean                                                                                                                  | default: `false`  |
 | suffix      | string                                                                                                                   |                   |
 | icon        | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |                   |
+| type        | `text` \| `password` \| `file`                                                                                           | default: `text`   |
+
+### PasswordTextField
+
+#### Usage
+
+```tsx
+import { PasswordTextField } from '@yeonsubaek/yeonsui'
+```
+
+```tsx
+const [text, setText] = useState<string>('')
+
+return <PasswordTextField id="example-password-textfield" value={text} onChange={(e) => setText(e.target.value)} />
+```
+
+#### Props
+
+| Name        | Type                                       | Description       |
+| ----------- | ------------------------------------------ | ----------------- |
+| id          | string                                     | **required**      |
+| value       | string                                     | **required**      |
+| onChange    | (e: ChangeEvent<HTMLInputElement>) => void | **required**      |
+| placeholder | string                                     |                   |
+| size        | `small` \| `medium` \| `large`             | default: `medium` |
+| disabled    | boolean                                    | default: `false`  |
