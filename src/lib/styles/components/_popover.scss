@@ -23,7 +23,14 @@ $main-padding: 24px;
     border-bottom: 1px solid var(--Gray4);
     font: var(--Font-Header-3);
     color: var(--Font-Color-Title);
-    background-color: var(--Gary1);
+    background-color: var(--Gray1);
+  }
+
+  &-title {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &-main {
@@ -37,8 +44,9 @@ $main-padding: 24px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 8px;
     height: $footer-height;
     padding: 0 16px;
-    background-color: var(--Gary1);
+    background-color: var(--Gray1);
   }
 }
