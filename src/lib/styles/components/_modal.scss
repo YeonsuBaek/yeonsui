@@ -1,0 +1,39 @@
+$header-height: 56px;
+$footer-height: 52px;
+$main-padding: 24px;
+
+.ui-modal {
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $header-height;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--Gray4);
+    font: var(--Font-Header-3);
+    color: var(--Font-Color-Title);
+  }
+
+  &-title {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-main {
+    padding: $main-padding;
+    word-break: break-all;
+    max-height: calc(90vh - $header-height - $footer-height - $main-padding * 2);
+    overflow-y: auto;
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    height: $footer-height;
+    padding: 0 16px;
+  }
+}
