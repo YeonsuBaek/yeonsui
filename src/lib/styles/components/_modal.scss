@@ -10,15 +10,41 @@ $main-padding: 24px;
     height: $header-height;
     padding: 0 24px;
     border-bottom: 1px solid var(--Gray4);
+  }
+
+  &-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  &-title {
+    display: inline;
+    overflow: hidden;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font: var(--Font-Header-3);
     color: var(--Font-Color-Title);
   }
 
-  &-title {
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  &-icon {
+    &.info path {
+      fill: var(--Daybreak6);
+    }
+    &.warning path {
+      fill: var(--Sunset6);
+    }
+    &.success path {
+      fill: var(--Polar6);
+    }
+    &.error path {
+      fill: var(--Red6);
+    }
+    &.question path {
+      fill: var(--Cyan6);
+    }
   }
 
   &-main {
