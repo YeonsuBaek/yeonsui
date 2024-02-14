@@ -16,11 +16,13 @@ $main-padding: 24px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 4px;
+
+    gap: 8px;
+    overflow: hidden;
   }
 
   &-title {
-    display: inline;
+    display: inline-block;
     overflow: hidden;
     margin: 0;
     text-overflow: ellipsis;
@@ -30,6 +32,9 @@ $main-padding: 24px;
   }
 
   &-icon {
+    display: flex;
+    flex-shrink: 0;
+
     &.info path {
       fill: var(--Daybreak6);
     }

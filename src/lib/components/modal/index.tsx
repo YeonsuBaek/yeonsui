@@ -1,14 +1,25 @@
 import { ReactNode } from 'react'
 import Modal from './Modal'
 
-export interface ModalProps {
-  children: ReactNode | ReactNode[]
+export interface ModalHeaderProps {
   title: string
+  icon?: 'info' | 'warning' | 'success' | 'error' | 'question'
+}
+
+export interface ModalContentsProps {
+  children: ReactNode | ReactNode[]
+}
+
+export interface ModalFooterProps {
   labelSave?: string
   labelClose?: string
   onSave?: () => void
   onClose: () => void
-  icon?: 'info' | 'warning' | 'success' | 'error' | 'question'
+}
+
+export interface ModalProps extends ModalHeaderProps, ModalContentsProps, ModalFooterProps {
+  children: ReactNode | ReactNode[]
+  onClose: () => void
 }
 
 export { Modal }
