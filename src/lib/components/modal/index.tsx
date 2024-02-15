@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import Modal from './Modal'
 
 export interface ModalHeaderProps {
-  title: string
+  title?: string
   icon?: 'info' | 'warning' | 'success' | 'error' | 'question'
 }
 
