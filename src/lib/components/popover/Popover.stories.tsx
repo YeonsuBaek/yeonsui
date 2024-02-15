@@ -9,7 +9,11 @@ const meta: Meta<typeof Popover> = {
 
 export default meta
 
-const InteractionTemplate: ComponentStory<typeof Popover> = (args) => <Popover onClose={() => {}}>Content</Popover>
+const InteractionTemplate: ComponentStory<typeof Popover> = (args) => (
+  <Popover onClose={() => {}} isOpen>
+    Content
+  </Popover>
+)
 
 export const Interactive = InteractionTemplate.bind({})
 Interactive.args = {}
