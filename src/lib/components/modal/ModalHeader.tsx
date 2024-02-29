@@ -11,7 +11,7 @@ const ModalHeader = ({ title, icon }: ModalHeaderProps) => {
       if (icon === 'success') return 'CheckCircle'
       if (icon === 'question') return 'QuestionCircle'
     }
-    return
+    return null
   }, [icon])
 
   return (
