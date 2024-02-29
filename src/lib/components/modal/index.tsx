@@ -19,8 +19,6 @@ export interface ModalFooterProps {
 
 export interface ModalProps extends ModalHeaderProps, ModalContentsProps, ModalFooterProps {
   isOpen: boolean
-  children: ReactNode | ReactNode[]
-  onClose: () => void
 }
 
 export { Modal }

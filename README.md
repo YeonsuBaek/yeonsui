@@ -20,6 +20,7 @@ Explore the UI through [Storybook](https://65a2410191d174e557802180-ohieifrhvn.c
   - [IconButton](#iconbutton)
 - [3. TextField](#textfield)
   - [PasswordTextField](#password)
+- [4. Modal](#modal)
 
 ### Theme
 
@@ -166,3 +167,35 @@ return <PasswordTextField id="example-password-textfield" value={text} onChange=
 | placeholder | string                                     |                   |
 | size        | `small` \| `medium` \| `large`             | default: `medium` |
 | disabled    | boolean                                    | default: `false`  |
+
+### Modal
+
+#### Usage
+
+```tsx
+import { Modal } from '@yeonsubaek/yeonsui'
+
+const [isOpen, setIsOpen] = useState(false)
+
+return (
+  <>
+    <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
+    <Modal onClose={() => setIsOpen(false)} isOpen={isOpen} title="Title">
+      contents
+    </Modal>
+  </>
+)
+```
+
+#### Props
+
+| Name       | Type                                                      | Description      |
+| ---------- | --------------------------------------------------------- | ---------------- |
+| isOpen     | boolean                                                   | **required**     |
+| children   | ReactNode \| ReactNode[]                                  | **required**     |
+| onClose    | () => void                                                | **required**     |
+| title      | string                                                    |                  |
+| icon       | 'info' \| 'warning' \| 'success' \| 'error' \| 'question' |                  |
+| labelClose | string                                                    | default: 'Close' |
+| labelSave  | string                                                    | default: 'Save'  |
+| onSave     | () => void                                                |                  |
