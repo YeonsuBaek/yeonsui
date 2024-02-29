@@ -1,21 +1,15 @@
 import React from 'react'
 import { Portal } from '../portal'
 import { Backdrop } from '../backdrop'
-import { Button } from '../button'
+import { PopoverProps } from '.'
 
-const Popover = () => {
-  return (
+const Popover = ({ children, isOpen }: PopoverProps) => {
+  return isOpen ? (
     <Portal>
-      <Backdrop onClose={() => {}}></Backdrop>
-      <div className="ui-popover">
-        <header className="ui-popover-header">Basic Modal</header>
-        <main className="ui-popover-main">Main</main>
-        <footer className="ui-popover-footer">
-          <Button>OK</Button>
-        </footer>
-      </div>
+      <Backdrop />
+      <div className="ui-popover">{children}</div>
     </Portal>
-  )
+  ) : null
 }
 
 export default Popover
