@@ -2,3 +2,8 @@
 /src/
 /public/
 /tsconfig.json
+/.github
+/.storybook
+/build-storybook.log
+/babel.config.json
+/README.md

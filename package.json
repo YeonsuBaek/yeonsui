@@ -1,6 +1,6 @@
 {
   "name": "@yeonsubaek/yeonsui",
-  "version": "0.0.18",
+  "version": "0.0.21",
   "description": "UI library for frontend developers",
   "main": "dist/index.umd.cjs",
   "module": "dist/index.js",
@@ -77,5 +77,5 @@
     "webpack": "^5.89.0"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "@yeonsubaek/yeonsui@0.0.18"
+  "_id": "@yeonsubaek/yeonsui@0.0.21"
 }
