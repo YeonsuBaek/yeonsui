@@ -1,8 +1,9 @@
+import { ButtonHTMLAttributes } from 'react'
 import { IconType } from '../icon/Icons'
 import Button from './Button'
 import IconButton from './IconButton'
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string
   variant?: 'primary' | 'secondary' | 'link' | 'text'
   size?: 'small' | 'medium' | 'large'
@@ -13,7 +14,7 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
 }
 
-export interface IconButtonProps {
+export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary'
   size?: 'small' | 'medium' | 'large'
   shape?: 'default' | 'circle' | 'square'
