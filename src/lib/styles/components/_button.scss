@@ -45,12 +45,12 @@
   }
 
   &.secondary {
-    color: var(--Font-Color-Title);
+    color: var(--Primary-Color-6);
     background-color: var(--Gray1);
-    border-color: var(--Gray5);
+    border-color: var(--Primary-Color-6);
 
     .ui-button-icon path {
-      fill: var(--Font-Color-Title);
+      fill: var(--Primary-Color-6);
     }
 
     &:hover {
@@ -78,6 +78,14 @@
 
     .ui-button-icon path {
       fill: var(--Primary-Color-6);
+    }
+
+    &:hover {
+      color: var(--Primary-Color-5);
+
+      .ui-button-icon path {
+        fill: var(--Primary-Color-5);
+      }
     }
 
     &:active {
