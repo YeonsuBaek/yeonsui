@@ -19,10 +19,12 @@ export const IconRender = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        gap: '8px',
+        width: '84px',
       }}
     >
       <Icon icon={icon as IconType} />
-      <span>{icon}</span>
+      <span style={{ fontSize: '14px', width: '100%', textAlign: 'center', wordBreak: 'break-word' }}>{icon}</span>
     </div>
   ))
   return <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>{renderIcons}</div>
@@ -37,10 +39,12 @@ export const OutlinedIconsRender = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        gap: '8px',
+        width: '84px',
       }}
     >
       <Icon icon={icon as IconType | OutlinedIconType} />
-      <span>{icon}</span>
+      <span style={{ fontSize: '14px', width: '100%', textAlign: 'center', wordBreak: 'break-word' }}>{icon}</span>
     </div>
   ))
   return <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>{renderIcons}</div>
