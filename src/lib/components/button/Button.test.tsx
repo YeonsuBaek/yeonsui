@@ -1,23 +1,23 @@
-import React from "react"
-import { fireEvent, render } from "@testing-library/react"
-import Button from "./Button"
-import IconButton from "./IconButton"
+import React from 'react'
+import { fireEvent, render } from '@testing-library/react'
+import Button from './Button'
+import IconButton from './IconButton'
 
-describe("Button test", () => {
-  test("Button onClick event", () => {
+describe('Button test', () => {
+  test('Button onClick event', () => {
     const handleClick = jest.fn()
     const { getByText } = render(<Button onClick={handleClick}>Button</Button>)
 
-    const btn = getByText("Button")
+    const btn = getByText('Button')
     expect(btn).toBeTruthy()
 
     fireEvent.click(btn)
     expect(handleClick).toHaveBeenCalledTimes(1)
   })
 
-  test("Button has icons", () => {
+  test('Button has icons', () => {
     const { container } = render(
-      <Button startIcon='Bell' endIcon='CaretDown'>
+      <Button startIcon="Bell" endIcon="CaretDown">
         Button
       </Button>
     )
@@ -25,40 +25,44 @@ describe("Button test", () => {
     const btn = container as HTMLButtonElement
     expect(btn).toBeTruthy()
 
-    expect(btn.querySelectorAll(".ui-button-icon").length).toBe(2)
+    expect(btn.querySelectorAll('.ui-button-icon').length).toBe(2)
   })
 
-  type size = "small" | "medium" | "large"
+  type size = 'small' | 'medium' | 'large'
 
-  test.each<size>(["small", "medium", "large"])("Size of icons", (size) => {
+  test.each<size>(['small', 'medium', 'large'])('Size of icons', (size) => {
     const { container } = render(
-      <Button size={size} startIcon='Bell' endIcon='CaretDown'>
+      <Button size={size} startIcon="Bell" endIcon="CaretDown">
         Button
       </Button>
     )
 
     const btn = container as HTMLButtonElement
-    expect(btn.querySelector(".ui-button-icon")?.getAttribute("width")).toBe(
-      size === "large" ? "20" : "16"
-    )
+    expect(btn.querySelector('.ui-button-icon')?.getAttribute('width')).toBe(size === 'large' ? '20' : '16')
   })
 
-  test("IconButton rendering", () => {
-    const { container } = render(<IconButton icon='Copy' />)
+  test('IconButton rendering', () => {
+    const { container } = render(<IconButton icon="Copy" />)
 
     const btn = container
     expect(btn).toBeTruthy()
   })
 
-  test.each<size>(["small", "medium", "large"])(
-    "Size of icon button",
-    (size) => {
-      const { container } = render(<IconButton size={size} icon='Cloud' />)
+  test.each<size>(['small', 'medium', 'large'])('Size of icon button', (size) => {
+    const { container } = render(<IconButton size={size} icon="Cloud" />)
 
-      const btn = container as HTMLButtonElement
-      expect(btn.querySelector(".ui-button-icon")?.getAttribute("width")).toBe(
-        size === "large" ? "20" : "16"
-      )
-    }
-  )
+    const btn = container as HTMLButtonElement
+    expect(btn.querySelector('.ui-button-icon')?.getAttribute('width')).toBe(size === 'large' ? '20' : '16')
+  })
+
+  type color = 'error' | 'warning' | 'success'
+  test.each<color>(['error', 'warning', 'success'])('Color of buttons', (color) => {
+    const { container: buttonContainer } = render(<Button color={color}>Button</Button>)
+    const btn = buttonContainer.querySelector('.ui-button') as HTMLButtonElement
+    expect(btn.classList.contains(color)).toBeTruthy()
+
+    const { container: iconButtonContainer } = render(<IconButton color={color} icon="Bell" />)
+    const iconBtn = iconButtonContainer.querySelector('.ui-button') as HTMLButtonElement
+    expect(iconBtn.classList.contains(color)).toBeTruthy()
+  })
 })

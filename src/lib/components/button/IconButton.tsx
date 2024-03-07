@@ -9,15 +9,18 @@ const IconButton = ({
   icon,
   disabled = false,
   onClick,
+  color,
+  ...props
 }: IconButtonProps) => {
   const iconSize = useMemo(() => (size === 'large' ? 'small' : 'xsmall'), [size])
 
   return (
     <button
       type="button"
-      className={`ui-button ui-icon-button ${variant} ${size} ${shape}`}
+      className={`ui-button ui-icon-button ${variant} ${size} ${shape} ${color ? color : ''}`}
       disabled={disabled}
       onClick={onClick}
+      {...props}
     >
       <Icon className="ui-button-icon" icon={icon} size={iconSize} />
     </button>
