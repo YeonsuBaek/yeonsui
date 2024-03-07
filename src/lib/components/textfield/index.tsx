@@ -1,7 +1,8 @@
 import { ChangeEvent } from 'react'
 import TextField from './TextField'
 import PasswordTextField from './PasswordTextField'
-import { IconType } from '../icon/FilledIcons'
+import { FilledIconType } from '../icon/FilledIcons'
+import { OutlinedIconType } from '../icon/OutlinedIcons'
 
 export interface DefaultTextFieldProps {
   id: string
@@ -14,7 +15,7 @@ export interface DefaultTextFieldProps {
 
 export interface TextFieldProps extends DefaultTextFieldProps {
   suffix?: string
-  icon?: IconType
+  icon?: FilledIconType | OutlinedIconType
   type?: 'text' | 'password' | 'file'
 }
 
