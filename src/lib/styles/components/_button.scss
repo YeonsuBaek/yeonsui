@@ -1,3 +1,122 @@
+@mixin disabled-button-color() {
+  &:disabled,
+  &:disabled:is(:hover, :active) {
+    color: var(--Font-Color-Disabled);
+    background-color: var(--Gray3);
+    border-color: var(--Gray5);
+    cursor: default;
+
+    .ui-button-icon path {
+      fill: var(--Font-Color-Disabled);
+    }
+  }
+}
+
+@mixin primary-button-color($color) {
+  color: var(--Gray1);
+  background-color: var(--#{$color}6);
+  border-color: var(--#{$color}6);
+
+  .ui-button-icon path {
+    fill: var(--Gray1);
+  }
+
+  &:hover {
+    background-color: var(--#{$color}5);
+    border-color: var(--#{$color}5);
+  }
+  &:active {
+    background-color: var(--#{$color}7);
+    border-color: var(--#{$color}7);
+  }
+
+  @include disabled-button-color();
+}
+
+@mixin secondary-button-color($color) {
+  color: var(--#{$color}6);
+  background-color: var(--Gray1);
+  border-color: var(--#{$color}6);
+
+  .ui-button-icon path {
+    fill: var(--#{$color}6);
+  }
+
+  &:hover {
+    color: var(--#{$color}5);
+    border-color: var(--#{$color}5);
+
+    .ui-button-icon path {
+      fill: var(--#{$color}5);
+    }
+  }
+  &:active {
+    color: var(--#{$color}7);
+    border-color: var(--#{$color}7);
+
+    .ui-button-icon path {
+      fill: var(--#{$color}7);
+    }
+  }
+
+  @include disabled-button-color();
+}
+
+@mixin link-button-color($color) {
+  color: var(--#{$color}6);
+  background-color: transparent;
+  border-color: transparent;
+
+  .ui-button-icon path {
+    fill: var(--#{$color}6);
+  }
+
+  &:hover {
+    color: var(--#{$color}5);
+
+    .ui-button-icon path {
+      fill: var(--#{$color}5);
+    }
+  }
+
+  &:active {
+    color: var(--#{$color}7);
+
+    .ui-button-icon path {
+      fill: var(--#{$color}7);
+    }
+  }
+
+  @include disabled-button-color();
+  &:disabled,
+  &:disabled:is(:hover, :active) {
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+@mixin default-icon-button($color) {
+  background-color: transparent;
+  border: 0;
+
+  path {
+    fill: var(--#{$color}6);
+  }
+
+  &:hover path {
+    fill: var(--#{$color}5);
+  }
+  &:active path {
+    fill: var(--#{$color}7);
+  }
+
+  @include disabled-button-color();
+  &:disabled,
+  &:disabled:is(:hover, :active) {
+    background-color: transparent;
+  }
+}
+
 .ui-button {
   display: flex;
   align-items: center;
@@ -26,80 +145,44 @@
   }
 
   &.primary {
-    color: var(--Gray1);
-    background-color: var(--Primary-Color-6);
-    border-color: var(--Primary-Color-6);
+    @include primary-button-color(Primary-Color-);
 
-    .ui-button-icon path {
-      fill: var(--Gray1);
+    &.error {
+      @include primary-button-color(Red);
     }
-
-    &:hover {
-      background-color: var(--Primary-Color-5);
-      border-color: var(--Primary-Color-5);
+    &.warning {
+      @include primary-button-color(Sunset);
     }
-    &:active {
-      background-color: var(--Primary-Color-7);
-      border-color: var(--Primary-Color-7);
+    &.success {
+      @include primary-button-color(Polar);
     }
   }
 
   &.secondary {
-    color: var(--Primary-Color-6);
-    background-color: var(--Gray1);
-    border-color: var(--Primary-Color-6);
+    @include secondary-button-color(Primary-Color-);
 
-    .ui-button-icon path {
-      fill: var(--Primary-Color-6);
+    &.error {
+      @include secondary-button-color(Red);
     }
-
-    &:hover {
-      color: var(--Primary-Color-5);
-      border-color: var(--Primary-Color-5);
-
-      .ui-button-icon path {
-        fill: var(--Primary-Color-5);
-      }
+    &.warning {
+      @include secondary-button-color(Sunset);
     }
-    &:active {
-      color: var(--Primary-Color-7);
-      border-color: var(--Primary-Color-7);
-
-      .ui-button-icon path {
-        fill: var(--Primary-Color-7);
-      }
+    &.success {
+      @include secondary-button-color(Polar);
     }
   }
 
   &.link {
-    color: var(--Primary-Color-6);
-    background-color: transparent;
-    border-color: transparent;
+    @include link-button-color(Primary-Color-);
 
-    .ui-button-icon path {
-      fill: var(--Primary-Color-6);
+    &.error {
+      @include link-button-color(Red);
     }
-
-    &:hover {
-      color: var(--Primary-Color-5);
-
-      .ui-button-icon path {
-        fill: var(--Primary-Color-5);
-      }
+    &.warning {
+      @include link-button-color(Sunset);
     }
-
-    &:active {
-      color: var(--Primary-Color-7);
-
-      .ui-button-icon path {
-        fill: var(--Primary-Color-7);
-      }
-    }
-
-    &:disabled,
-    &:disabled:is(:hover, :active) {
-      background-color: transparent;
-      border-color: transparent;
+    &.success {
+      @include link-button-color(Polar);
     }
   }
 
@@ -115,6 +198,7 @@
       background-color: var(--Gray3);
     }
 
+    @include disabled-button-color();
     &:disabled,
     &:disabled:is(:hover, :active) {
       background-color: transparent;
@@ -122,17 +206,7 @@
     }
   }
 
-  &:disabled,
-  &:disabled:is(:hover, :active) {
-    color: var(--Font-Color-Disabled);
-    background-color: var(--Gray3);
-    border-color: var(--Gray5);
-    cursor: default;
-
-    .ui-button-icon path {
-      fill: var(--Font-Color-Disabled);
-    }
-  }
+  @include disabled-button-color;
 
   &.ui-icon-button {
     padding: 0;
@@ -150,26 +224,16 @@
       border-radius: 100px;
     }
     &.default {
-      background-color: transparent;
-      border: 0;
+      @include default-icon-button(Primary-Color-);
 
-      &.primary {
-        path {
-          fill: var(--Primary-Color-6);
-        }
-
-        &:hover path {
-          fill: var(--Primary-Color-5);
-        }
-        &:active path {
-          fill: var(--Primary-Color-7);
-        }
+      &.error {
+        @include default-icon-button(Red);
       }
-
-      &:disabled path,
-      &:disabled:is(:hover, :active) path {
-        fill: var(--Font-Color-Disabled);
-        cursor: default;
+      &.warning {
+        @include default-icon-button(Sunset);
+      }
+      &.success {
+        @include default-icon-button(Polar);
       }
     }
   }

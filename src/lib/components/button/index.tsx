@@ -12,6 +12,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   endIcon?: IconType
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset'
+  color?: 'error' | 'warning' | 'success'
 }
 
 export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -21,6 +22,7 @@ export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
   disabled?: boolean
   icon: IconType
   onClick?: () => void
+  color?: 'error' | 'warning' | 'success'
 }
 
 export { Button, IconButton }
