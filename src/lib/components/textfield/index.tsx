@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react'
 import TextField from './TextField'
 import PasswordTextField from './PasswordTextField'
-import { IconType } from '../icon/Icons'
+import { IconType } from '../icon/FilledIcons'
 
 export interface DefaultTextFieldProps {
   id: string

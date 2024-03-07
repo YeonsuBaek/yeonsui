@@ -1,9 +1,9 @@
 import Icon from './Icon'
-import { IconType } from './Icons'
+import { FilledIconType } from './FilledIcons'
 import { OutlinedIconType } from './OutlinedIcons'
 
 export interface IconProps {
-  icon: IconType | OutlinedIconType
+  icon: FilledIconType | OutlinedIconType
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
   color?: string
   className?: string

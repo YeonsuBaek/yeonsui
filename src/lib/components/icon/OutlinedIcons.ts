@@ -289,7 +289,7 @@ export const outlinedIcons = {
       ],
     },
   },
-  Warning: {
+  WarningOutlined: {
     ...defaultStyle,
     svgdata: {
       paths: [

@@ -1,6 +1,6 @@
-import type { ComponentStory, Meta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 import { Icon } from '.'
-import { icons, IconType } from './Icons'
+import { filledIcons, FilledIconType } from './FilledIcons'
 import { OutlinedIconType, outlinedIcons } from './OutlinedIcons'
 
 const meta: Meta<typeof Icon> = {
@@ -10,8 +10,8 @@ const meta: Meta<typeof Icon> = {
 
 export default meta
 
-export const IconRender = () => {
-  const iconList: string[] = Object.keys(icons)
+export const FilledIconRender = () => {
+  const iconList: string[] = Object.keys(filledIcons)
   const renderIcons = iconList.map((icon: string) => (
     <div
       key={`icon-${icon}`}
@@ -23,7 +23,7 @@ export const IconRender = () => {
         width: '84px',
       }}
     >
-      <Icon icon={icon as IconType} />
+      <Icon icon={icon as FilledIconType} />
       <span style={{ fontSize: '14px', width: '100%', textAlign: 'center', wordBreak: 'break-word' }}>{icon}</span>
     </div>
   ))
@@ -43,7 +43,7 @@ export const OutlinedIconsRender = () => {
         width: '84px',
       }}
     >
-      <Icon icon={icon as IconType | OutlinedIconType} />
+      <Icon icon={icon as OutlinedIconType} />
       <span style={{ fontSize: '14px', width: '100%', textAlign: 'center', wordBreak: 'break-word' }}>{icon}</span>
     </div>
   ))

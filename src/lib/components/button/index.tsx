@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react'
-import { IconType } from '../icon/Icons'
+import { IconType } from '../icon/FilledIcons'
 import Button from './Button'
 import IconButton from './IconButton'
 

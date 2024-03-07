@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { IconProps, SvgPathType } from '.'
-import { icons } from './Icons'
+import { filledIcons } from './FilledIcons'
 import { outlinedIcons } from './OutlinedIcons'
 
 const Icon = ({ icon, size, color, className = '' }: IconProps) => {
-  const { width: defWidth, height: defHeight, viewBox, fill, svgdata } = { ...icons, ...outlinedIcons }[icon]
+  const { width: defWidth, height: defHeight, viewBox, fill, svgdata } = { ...filledIcons, ...outlinedIcons }[icon]
 
   const [width, setWidth] = useState<string>(defWidth)
   const [height, setHeight] = useState<string>(defHeight)
