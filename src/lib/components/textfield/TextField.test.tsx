@@ -5,7 +5,6 @@ import PasswordTextField from './PasswordTextField'
 
 describe('TextField test', () => {
   type SIZE_TYPE = 'small' | 'medium' | 'large'
-  type SHAPE_TYPE = 'default' | 'circle' | 'square'
 
   test.each<SIZE_TYPE>(['small', 'medium', 'large'])('TextField with suffix', (size) => {
     const { getByText, getByDisplayValue } = render(
@@ -51,10 +50,16 @@ describe('TextField test', () => {
     expect(input.getAttribute('type')).toBe('text')
   })
 
-  test.each<SIZE_TYPE>(['small', 'medium', 'large'])('IconButton Shape', (size) => {
+  test.each<SIZE_TYPE>(['small', 'medium', 'large'])('IconButton Size', (size) => {
     const { container: PasswordTextFieldContainer } = render(
-      <PasswordTextField id="test-textfield-3" size={size} value="1234" onChange={() => {}} />
+      <PasswordTextField id={`test-textfield-4-${size}`} size={size} value="1234" onChange={() => {}} />
     )
     expect(PasswordTextFieldContainer).toBeTruthy()
+  })
+
+  test('TextField is autofocus', () => {
+    const { getByDisplayValue } = render(<TextField id="test-textfield-5" value="1234" onChange={() => {}} autoFocus />)
+    const input = getByDisplayValue('1234')
+    expect(document.activeElement).toEqual(input)
   })
 })
