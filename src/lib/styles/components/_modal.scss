@@ -2,6 +2,8 @@ $header-height: 56px;
 $footer-height: 52px;
 $main-padding: 24px;
 
+$main-padding-sm: 16px;
+
 .ui-modal {
   &-header {
     display: flex;
@@ -10,13 +12,15 @@ $main-padding: 24px;
     height: $header-height;
     padding: 0 24px;
     border-bottom: 1px solid var(--Gray4);
+
+    &-button {
+    }
   }
 
   &-title-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     gap: 8px;
     overflow: hidden;
   }
@@ -66,5 +70,14 @@ $main-padding: 24px;
     gap: 8px;
     height: $footer-height;
     padding: 0 16px;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .ui-modal {
+    &-main {
+      padding: $main-padding-sm;
+      max-height: calc(90vh - $header-height - $footer-height - $main-padding-sm * 2);
+    }
   }
 }

@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react'
 import { ModalHeaderProps } from '.'
 import { Icon } from '../icon'
+import { IconButton } from '../button'
 
-const ModalHeader = ({ title, icon }: ModalHeaderProps) => {
+const ModalHeader = ({ title, icon, headerButton, onClick }: ModalHeaderProps) => {
   const iconType = useMemo(() => {
     if (icon) {
       if (icon === 'info') return 'ExclamationCircle'
@@ -20,6 +21,7 @@ const ModalHeader = ({ title, icon }: ModalHeaderProps) => {
         {iconType && <Icon size="large" className={`ui-modal-icon ${icon}`} icon={iconType} />}
         <h2 className="ui-modal-title">{title}</h2>
       </div>
+      {headerButton && <IconButton icon={headerButton} variant="secondary" shape="square" onClick={onClick} />}
     </header>
   )
 }
