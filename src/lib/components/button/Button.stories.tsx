@@ -326,9 +326,6 @@ export const DefaultIconButton = () => {
           <IconButton variant="primary" size="small" icon="Like" />
         </td>
         <td>
-          <IconButton variant="secondary" size="small" icon="Like" />
-        </td>
-        <td>
           <IconButton size="small" icon="Like" disabled />
         </td>
       </tr>
@@ -337,18 +334,12 @@ export const DefaultIconButton = () => {
           <IconButton variant="primary" size="medium" icon="Like" />
         </td>
         <td>
-          <IconButton variant="secondary" size="medium" icon="Like" />
-        </td>
-        <td>
           <IconButton size="medium" icon="Like" disabled />
         </td>
       </tr>
       <tr>
         <td>
           <IconButton variant="primary" size="large" icon="Like" />
-        </td>
-        <td>
-          <IconButton variant="secondary" size="large" icon="Like" />
         </td>
         <td>
           <IconButton size="large" icon="Like" disabled />
