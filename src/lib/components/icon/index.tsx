@@ -1,9 +1,10 @@
-import Icon from "./Icon"
-import { IconType } from "./Icons"
+import Icon from './Icon'
+import { FilledIconType } from './FilledIcons'
+import { OutlinedIconType } from './OutlinedIcons'
 
 export interface IconProps {
-  icon: IconType
-  size?: "xsmall" | "small" | "medium" | "large" | "xlarge"
+  icon: FilledIconType | OutlinedIconType
+  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
   color?: string
   className?: string
 }
