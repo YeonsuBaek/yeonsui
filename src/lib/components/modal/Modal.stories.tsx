@@ -49,6 +49,12 @@ export const ModalWithAlert = () => (
   </Modal>
 )
 
+export const ModalWithHeaderButton = () => (
+  <Modal title="Todo List" onClose={() => {}} isOpen headerButton="Delete" onClick={() => {}}>
+    Some contents...
+  </Modal>
+)
+
 export const UntitledModal = () => (
   <Modal onClose={() => {}} isOpen>
     Some contents...

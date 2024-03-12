@@ -1,9 +1,12 @@
 import { ReactNode } from 'react'
 import Modal from './Modal'
+import { IconType } from '../icon/Icons'
 
 export interface ModalHeaderProps {
   title?: string
   icon?: 'info' | 'warning' | 'success' | 'error' | 'question'
+  headerButton?: IconType
+  onClick?: () => void
 }
 
 export interface ModalContentsProps {

@@ -12,6 +12,9 @@ $main-padding-sm: 16px;
     height: $header-height;
     padding: 0 24px;
     border-bottom: 1px solid var(--Gray4);
+
+    &-button {
+    }
   }
 
   &-title-wrapper {
