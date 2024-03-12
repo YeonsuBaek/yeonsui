@@ -10,6 +10,7 @@ export interface DefaultTextFieldProps {
   placeholder?: string
   size?: 'small' | 'medium' | 'large'
   disabled?: boolean
+  autoFocus?: boolean
 }
 
 export interface TextFieldProps extends DefaultTextFieldProps {

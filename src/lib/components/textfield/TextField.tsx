@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { createRef, useEffect, useMemo, useRef, useState } from 'react'
 import { TextFieldProps } from '.'
 import { Icon } from '../icon'
 
@@ -12,6 +12,7 @@ const TextField = ({
   suffix,
   icon,
   type = 'text',
+  autoFocus = false,
 }: TextFieldProps) => {
   const DEFAULT_RIGHT_PADDING = {
     small: 7,
@@ -25,6 +26,7 @@ const TextField = ({
     large: 20,
   }
 
+  const inputRef = useRef(null)
   const suffixRef = useRef(null)
   const [iconWidth, setIconWidth] = useState<number>(0)
   const [suffixWidth, setSuffixWidth] = useState<number>(0)
@@ -41,6 +43,13 @@ const TextField = ({
     }
   }, [size, icon, suffix])
 
+  useEffect(() => {
+    if (autoFocus && inputRef?.current) {
+      const current = inputRef.current as HTMLElement
+      current.focus()
+    }
+  }, [autoFocus])
+
   return (
     <div className={`ui-textfield ${size} ${disabled ? 'disabled' : ''}`}>
       <input
@@ -55,6 +64,7 @@ const TextField = ({
           paddingLeft: `${DEFAULT_RIGHT_PADDING[size] + iconWidth}px`,
           paddingRight: `${DEFAULT_RIGHT_PADDING[size] + suffixWidth}px`,
         }}
+        ref={inputRef}
       />
       {suffix && (
         <span className="ui-textfield-suffix" ref={suffixRef}>
