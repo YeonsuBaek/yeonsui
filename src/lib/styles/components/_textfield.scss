@@ -13,6 +13,10 @@
     border-color: var(--Primary-Color-5);
   }
 
+  &.isError {
+    border-color: var(--Red5);
+  }
+
   &-input {
     width: 100%;
     height: 100%;
@@ -24,13 +28,71 @@
     background-color: transparent;
     z-index: 10;
 
-    &::placeholder,
+    &::placeholder {
+      color: var(--Gray6);
+    }
     &:disabled {
       color: var(--Font-Color-Disabled);
     }
   }
 
-  .ui-textfield-suffix {
+  &-label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font: var(--Font-Body-Regular);
+    color: var(--Gray6);
+    transition: font-size 100ms, top 100ms, transform 100ms;
+
+    &.required {
+      &::after {
+        content: '*';
+        color: var(--Red5);
+      }
+    }
+  }
+
+  &.label {
+    &.placeholder,
+    &:has(.ui-textfield-input:focus),
+    &.hasValue {
+      .ui-textfield-input {
+        padding-top: 14px;
+      }
+
+      .ui-textfield-label {
+        position: absolute;
+        font: var(--Font-Body-Micro);
+        color: var(--Gray6);
+        top: 10px;
+      }
+
+      .ui-textfield-suffix {
+        position: absolute;
+        bottom: 8px;
+      }
+    }
+
+    &.ns-textfield-focused,
+    &:focus {
+      & + .ns-textfield-inner-label {
+        color: var(--TextField-Label-Focused);
+      }
+    }
+  }
+
+  &-helper-text {
+    margin: 0;
+    color: var(--Gray7);
+    font: var(--Font-Body-Regular);
+
+    &.isError {
+      color: var(--Red5);
+    }
+  }
+
+  &-suffix {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -38,7 +100,7 @@
     font: var(--Font-Body-Regular);
   }
 
-  .ui-textfield-icon {
+  &-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

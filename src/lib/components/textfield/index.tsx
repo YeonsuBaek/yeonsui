@@ -10,8 +10,12 @@ export interface DefaultTextFieldProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
   placeholder?: string
   size?: 'small' | 'medium' | 'large'
+  label?: string
+  required?: boolean
   disabled?: boolean
   autoFocus?: boolean
+  isError?: boolean
+  helperText?: string
 }
 
 export interface TextFieldProps extends DefaultTextFieldProps {

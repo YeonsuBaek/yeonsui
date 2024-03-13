@@ -1,4 +1,4 @@
-import { createRef, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { TextFieldProps } from '.'
 import { Icon } from '../icon'
 
@@ -8,11 +8,15 @@ const TextField = ({
   onChange,
   placeholder = '',
   size = 'medium',
+  label = '',
+  required = false,
   disabled = false,
   suffix,
   icon,
   type = 'text',
   autoFocus = false,
+  isError = false,
+  helperText = '',
 }: TextFieldProps) => {
   const DEFAULT_RIGHT_PADDING = {
     small: 7,
@@ -51,28 +55,40 @@ const TextField = ({
   }, [autoFocus])
 
   return (
-    <div className={`ui-textfield ${size} ${disabled ? 'disabled' : ''}`}>
-      <input
-        className="ui-textfield-input"
-        type={type}
-        id={id}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        disabled={disabled}
-        style={{
-          paddingLeft: `${DEFAULT_RIGHT_PADDING[size] + iconWidth}px`,
-          paddingRight: `${DEFAULT_RIGHT_PADDING[size] + suffixWidth}px`,
-        }}
-        ref={inputRef}
-      />
-      {suffix && (
-        <span className="ui-textfield-suffix" ref={suffixRef}>
-          {suffix}
-        </span>
-      )}
-      {icon && <Icon className="ui-textfield-icon" size={iconSize} icon={icon} />}
-    </div>
+    <>
+      <div
+        className={`ui-textfield ${size} ${placeholder ? 'placeholder' : ''} ${
+          label && size === 'large' ? 'label' : ''
+        } ${disabled ? 'disabled' : ''} ${isError ? 'isError' : ''} ${value ? 'hasValue' : ''}`}
+      >
+        <input
+          className="ui-textfield-input"
+          type={type}
+          id={id}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          disabled={disabled}
+          style={{
+            paddingLeft: `${DEFAULT_RIGHT_PADDING[size] + iconWidth}px`,
+            paddingRight: `${DEFAULT_RIGHT_PADDING[size] + suffixWidth}px`,
+          }}
+          ref={inputRef}
+        />
+        {label && size === 'large' && (
+          <label htmlFor={id} className={`ui-textfield-label ${required ? 'required' : ''}`}>
+            {label}
+          </label>
+        )}
+        {suffix && (
+          <span className="ui-textfield-suffix" ref={suffixRef}>
+            {suffix}
+          </span>
+        )}
+        {icon && <Icon className="ui-textfield-icon" size={iconSize} icon={icon} />}
+      </div>
+      {helperText && <p className={`ui-textfield-helper-text ${isError ? 'isError' : ''}`}>{helperText}</p>}
+    </>
   )
 }
 

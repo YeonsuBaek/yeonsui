@@ -13,7 +13,8 @@ html:root {
   --Font-Header-4: var(--Font-Weight-Bold) 20px/28px '#{$font-family}';
   --Font-Header-5: var(--Font-Weight-Bold) 16px/24px '#{$font-family}';
 
-  --Font-Body-Regular: var(--Font-Weight-Regular) 14px/22px '#{$font-family}';
-  --Font-Body-Medium: var(--Font-Weight-Medium) 14px/22px '#{$font-family}';
-  --Font-Body-Bold: var(--Font-Weight-Bold) 14px/22px '#{$font-family}';
+  --Font-Body-Micro: var(--Font-Weight-Regular) 12px/14px '#{$font-family}';
+  --Font-Body-Regular: var(--Font-Weight-Regular) 14px/21px '#{$font-family}';
+  --Font-Body-Medium: var(--Font-Weight-Medium) 14px/21px '#{$font-family}';
+  --Font-Body-Bold: var(--Font-Weight-Bold) 14px/21px '#{$font-family}';
 }
