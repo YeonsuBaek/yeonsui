@@ -28,9 +28,50 @@
     background-color: transparent;
     z-index: 10;
 
-    &::placeholder,
+    &::placeholder {
+      color: var(--Gray6);
+    }
     &:disabled {
       color: var(--Font-Color-Disabled);
+    }
+  }
+
+  &-label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font: var(--Font-Body-Regular);
+    color: var(--Gray6);
+    transition: font-size 100ms, top 100ms, transform 100ms;
+  }
+
+  &.label {
+    &.placeholder,
+    &:has(.ui-textfield-input:focus),
+    &.hasValue {
+      .ui-textfield-input {
+        padding-top: 14px;
+      }
+
+      .ui-textfield-label {
+        position: absolute;
+        font: var(--Font-Body-Micro);
+        color: var(--Gray6);
+        top: 10px;
+      }
+
+      .ui-textfield-suffix {
+        position: absolute;
+        bottom: 8px;
+      }
+    }
+
+    &.ns-textfield-focused,
+    &:focus {
+      & + .ns-textfield-inner-label {
+        color: var(--TextField-Label-Focused);
+      }
     }
   }
 

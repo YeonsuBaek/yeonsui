@@ -8,6 +8,7 @@ const TextField = ({
   onChange,
   placeholder = '',
   size = 'medium',
+  label = '',
   disabled = false,
   suffix,
   icon,
@@ -54,7 +55,11 @@ const TextField = ({
 
   return (
     <>
-      <div className={`ui-textfield ${size} ${disabled ? 'disabled' : ''} ${isError ? 'isError' : ''}`}>
+      <div
+        className={`ui-textfield ${size} ${placeholder ? 'placeholder' : ''} ${
+          label && size === 'large' ? 'label' : ''
+        } ${disabled ? 'disabled' : ''} ${isError ? 'isError' : ''} ${value ? 'hasValue' : ''}`}
+      >
         <input
           className="ui-textfield-input"
           type={type}
@@ -69,6 +74,11 @@ const TextField = ({
           }}
           ref={inputRef}
         />
+        {label && size === 'large' && (
+          <label htmlFor={id} className="ui-textfield-label">
+            {label}
+          </label>
+        )}
         {suffix && (
           <span className="ui-textfield-suffix" ref={suffixRef}>
             {suffix}
