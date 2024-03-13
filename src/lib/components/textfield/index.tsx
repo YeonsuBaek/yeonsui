@@ -12,6 +12,8 @@ export interface DefaultTextFieldProps {
   size?: 'small' | 'medium' | 'large'
   disabled?: boolean
   autoFocus?: boolean
+  isError?: boolean
+  helperText?: string
 }
 
 export interface TextFieldProps extends DefaultTextFieldProps {
