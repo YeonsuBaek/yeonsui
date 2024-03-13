@@ -9,6 +9,7 @@ const TextField = ({
   placeholder = '',
   size = 'medium',
   label = '',
+  required = false,
   disabled = false,
   suffix,
   icon,
@@ -75,7 +76,7 @@ const TextField = ({
           ref={inputRef}
         />
         {label && size === 'large' && (
-          <label htmlFor={id} className="ui-textfield-label">
+          <label htmlFor={id} className={`ui-textfield-label ${required ? 'required' : ''}`}>
             {label}
           </label>
         )}

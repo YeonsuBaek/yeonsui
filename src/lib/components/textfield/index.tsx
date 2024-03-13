@@ -11,6 +11,7 @@ export interface DefaultTextFieldProps {
   placeholder?: string
   size?: 'small' | 'medium' | 'large'
   label?: string
+  required?: boolean
   disabled?: boolean
   autoFocus?: boolean
   isError?: boolean

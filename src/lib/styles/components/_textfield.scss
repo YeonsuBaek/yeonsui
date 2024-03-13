@@ -44,6 +44,13 @@
     font: var(--Font-Body-Regular);
     color: var(--Gray6);
     transition: font-size 100ms, top 100ms, transform 100ms;
+
+    &.required {
+      &::after {
+        content: '*';
+        color: var(--Red5);
+      }
+    }
   }
 
   &.label {
