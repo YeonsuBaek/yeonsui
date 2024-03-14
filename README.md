@@ -10,7 +10,7 @@ $ npm i @yeonsubaek/yeonsui
 
 ### 데모
 
-[Storybook](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com)을 통해 UI를 살펴볼 수 있습니다.
+[Storybook](https://65a2410191d174e557802180-knplnhfafi.chromatic.com/?path=/story/component-button--interactive)을 통해 UI를 살펴볼 수 있습니다.
 
 ## 🎨 컴포넌트
 
@@ -219,7 +219,7 @@ return (
 | children   | ReactNode \| ReactNode[]                                  | **required**     |
 | onClose    | `() => void`                                                | **required**     |
 | title      | string                                                    |                  |
-| icon       | 'info' \| 'warning' \| 'success' \| 'error' \| 'question' |                  |
+| icon       | `info` \| `warning` \| `success` \| `error` \| `question` |                  |
 | headerButton | 아이콘 이름 | |
 | onClick | `() => void` | headerButton 클릭 이벤트입니다. 적절한 props명을 선정하지 못해 죄송합니다 :( |
 | labelClose | string                                                    | default: 'Close' |
