@@ -1,25 +1,25 @@
 # YEONSUI
 
-## 🏂 Getting-Started
+## 🏂 시작하기
 
-### Installation
+### 설치
 
 ```
 $ npm i @yeonsubaek/yeonsui
 ```
 
-### Demo
+### 데모
 
-Explore the UI through [Storybook](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com)
+[Storybook](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com)을 통해 UI를 살펴볼 수 있습니다.
 
-## 🎨 Components
+## 🎨 컴포넌트
 
 - [0. Theme](#theme)
 - [1. Icon](#icon)
 - [2. Button](#button)
   - [IconButton](#iconbutton)
 - [3. TextField](#textfield)
-  - [PasswordTextField](#password)
+  - [PasswordTextField](#passwordtextfield)
 - [4. Modal](#modal)
 
 ### Theme
@@ -39,9 +39,10 @@ return (
 | Type                                                                                                         | Description                                                                                |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | default                                                                                                      | `theme-light`                                                                              |
-| [color](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/foundation-colors--color-set) | `red` \| `volcano` \| `sunset` \| `polar` \| `cyan` \| `daybreak` \| `purple` \| `magenta` |
+| color | `red` \| `volcano` \| `sunset` \| `polar` \| `cyan` \| `daybreak` \| `purple` \| `magenta` |
 
-**Must apply both default and colour theme.**
+**default와 color 테마를 모두 적용해야 올바르게 색상이 적용됩니다.**   
+상세 테마 보러 가기 [링크](https://65a2410191d174e557802180-knplnhfafi.chromatic.com/?path=/story/foundation-colors--color-set)
 
 ### Icon
 
@@ -59,9 +60,12 @@ return <Icon icon="Star" />
 
 | Name  | Type                                                                                                                     | Desciption           |
 | ----- | ------------------------------------------------------------------------------------------------------------------------ | -------------------- |
-| icon  | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) | **required**         |
+| icon  | 아이콘 이름 | **required**         |
 | size  | `small` \| `medium` \| `large`                                                                                           | `medium`             |
 | color | string                                                                                                                   | `--Font-Color-Title` |
+| ClassName | string | |
+
+상세 아이콘 보러 가기 [링크](https://65a2410191d174e557802180-knplnhfafi.chromatic.com/?path=/story/component-icon--filled-icon-render)
 
 ### Button
 
@@ -91,6 +95,9 @@ return (
 | endIcon   | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |                   |
 | onClick   | `() => void`                                                                                                             |                   |
 | type      | `button` \| `submit` \| `reset`                                                                                          | default: `button` |
+| color | `error` \| `warning` \| `success` | |
+
+상세 버튼 보러 가기 [링크](https://65a2410191d174e557802180-knplnhfafi.chromatic.com/?path=/story/component-button--interactive)
 
 ### IconButton
 
@@ -108,12 +115,15 @@ return <IconButton icon="Heart" />
 
 | Name     | Type                                                                                                                     | Description        |
 | -------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-| icon     | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) | **requried**       |
+| icon     | 아이콘 이름 | **requried**       |
 | variant  | `primary` \| `secondary`                                                                                                 | default: `primary` |
 | size     | `small` \| `medium` \| `large`                                                                                           | default: `medium`  |
 | shape    | `default` \| `circle` \| `square`                                                                                        | default: `default` |
 | disabled | boolean                                                                                                                  | `false`            |
 | onClick  | `() => void`                                                                                                             |                    |
+| color | `error` \| `warning` \| `success` | |
+
+상세 아이콘버튼 보러 가기 [링크](https://65a2410191d174e557802180-knplnhfafi.chromatic.com/?path=/story/component-button--default-icon-button)
 
 ### TextField
 
@@ -138,10 +148,17 @@ return <TextField id="example-textfield" value={text} onChange={(e) => setText(e
 | onChange    | (e: ChangeEvent<HTMLInputElement>) => void                                                                               | **required**      |
 | placeholder | string                                                                                                                   |                   |
 | size        | `small` \| `medium` \| `large`                                                                                           | default: `medium` |
+| label | string | |
+| required | boolean | default: `false` |
 | disabled    | boolean                                                                                                                  | default: `false`  |
+| autoFocus | boolean | default: `false` |
+| isError | boolean | default: `false` |
+| helperText | string | |
 | suffix      | string                                                                                                                   |                   |
 | icon        | keyof typeof [icons](https://65a2410191d174e557802180-ohieifrhvn.chromatic.com/?path=/story/component-icon--icon-render) |                   |
 | type        | `text` \| `password` \| `file`                                                                                           | default: `text`   |
+
+상세 텍스트필드 보러 가기 [링크](https://65a2410191d174e557802180-knplnhfafi.chromatic.com/?path=/story/component-textfield--interactive)
 
 ### PasswordTextField
 
@@ -166,7 +183,14 @@ return <PasswordTextField id="example-password-textfield" value={text} onChange=
 | onChange    | (e: ChangeEvent<HTMLInputElement>) => void | **required**      |
 | placeholder | string                                     |                   |
 | size        | `small` \| `medium` \| `large`             | default: `medium` |
+| label | string | |
+| required | boolean | default: `false` |
 | disabled    | boolean                                    | default: `false`  |
+| autoFocus | boolean | default: `false` |
+| isError | boolean | default: `false` |
+| helperText | string | |
+
+상세 패스워드 텍스트필드 보러 가기 [링크](https://65a2410191d174e557802180-knplnhfafi.chromatic.com/?path=/story/component-textfield--text-field-for-password)
 
 ### Modal
 
@@ -193,9 +217,13 @@ return (
 | ---------- | --------------------------------------------------------- | ---------------- |
 | isOpen     | boolean                                                   | **required**     |
 | children   | ReactNode \| ReactNode[]                                  | **required**     |
-| onClose    | () => void                                                | **required**     |
+| onClose    | `() => void`                                                | **required**     |
 | title      | string                                                    |                  |
 | icon       | 'info' \| 'warning' \| 'success' \| 'error' \| 'question' |                  |
+| headerButton | 아이콘 이름 | |
+| onClick | `() => void` | headerButton 클릭 이벤트입니다. 적절한 props명을 선정하지 못해 죄송합니다 :( |
 | labelClose | string                                                    | default: 'Close' |
 | labelSave  | string                                                    | default: 'Save'  |
 | onSave     | () => void                                                |                  |
+
+상세 모달 보러 가기 [링크](https://65a2410191d174e557802180-knplnhfafi.chromatic.com/?path=/story/component-modal--interactive)
